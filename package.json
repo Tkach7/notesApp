@@ -1,0 +1,41 @@
+{
+  "name": "notes-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "",
+    "start": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tkach7/notesApp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tkach7/notesApp/issues"
+  },
+  "homepage": "https://github.com/Tkach7/notesApp#readme",
+  "dependencies": {
+    "babel-core": "^6.11.4",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-develop-server": "^0.5.2",
+    "gulp-filter": "^4.0.0",
+    "gulp-ng-annotate": "^2.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-util": "^3.0.7",
+    "json-loader": "^0.5.4",
+    "main-bower-files": "^2.13.1",
+    "morgan": "^1.7.0",
+    "raw-loader": "^0.5.1",
+    "serve-favicon": "^2.3.0",
+    "vinyl-named": "^1.1.0",
+    "webpack-stream": "^3.2.0"
+  }
+}

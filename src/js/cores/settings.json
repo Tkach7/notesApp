@@ -1,0 +1,7 @@
+{
+	"backend": "http://localhost:3000",
+	"auth": {
+		"headerName": "Authorization",
+		"sessionName": "session"
+	}
+}
