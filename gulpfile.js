@@ -18,7 +18,7 @@ const webpack = webpackStream.webpack;
 
 
 // @gulp:default
-gulp.task('default', ['js', 'vendors', 'css', 'watch'], () => {
+gulp.task('default', ['js', 'vendors', 'css', 'html', 'watch'], () => {
 	server.listen({
 		path: 'server.js'
 	}, () => {
@@ -89,7 +89,14 @@ gulp.task('css', () => {
 	return console.log('Build js');
 });
 
+// @gulp:html
+gulp.task('html', () => {
+	return gulp.src('src/index.html')
+		.pipe(gulp.dest('public'));
+});
+
 // @gulp:watch:css
 gulp.task('watch', () => {
 	gulp.watch('src/css/**/*.css', ['css']);
-})
+	gulp.watch('src/*.html', ['html']);
+});

@@ -6,4 +6,4 @@ manifest
 reports
 public/css
 public/js
-.gitignore
+public/*.html

@@ -1,0 +1,8 @@
+{
+    "auth": {
+        "check": "/users/self",
+        "in": "/sign/in",
+        "out": "/sign/out",
+        "key": "/sign/key"
+    }
+}

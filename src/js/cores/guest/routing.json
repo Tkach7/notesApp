@@ -1,5 +1,9 @@
 [{
 	"uri": "/",
-	"controller": "IndexController",
+	"controller": "IndexCtrl",
 	"title": "Главная страница"
+}, {
+	"uri": "/sign",
+	"controller": "SignCtrl",
+	"title": "Войдите"
 }]
