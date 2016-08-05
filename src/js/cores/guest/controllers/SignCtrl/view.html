@@ -1,10 +1,10 @@
-<article>
-	<h1>Авторизация</h1>
-	<form ng-submit="sign()">
-		<label for="login">Логин</label><br>
-		<input name="login" type="text"  ng-model="user.email"><br>
-		<label for='password'>Пароль</label><br>
-		<input name='password' type="password" ng-model="user.password"><br>
-		<input type="submit" value="Войти">
+<article class="auth-window">
+	<div class="auth-caption">
+		<span class="auth-caption__text">Войти в приложение</span>
+	</div>
+	<form ng-submit="sign()" class="auth-form">
+		<input name="login" type="text"  ng-model="user.email" class="inp-login" placeholder="Введите логин">
+		<input name='password' type="password" ng-model="user.password" class="inp-passwd" placeholder="Введите пароль">
+		<input type="submit" value="Войти" class="inp-enter">
 	</form>
 </article>

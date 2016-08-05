@@ -1,0 +1,17 @@
+.enter {
+	cursor: pointer;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 236px;
+  	height: 60px;
+  	background-color: #ffffff;
+}
+
+.enter a {
+  	font-size: 21px;
+  	font-weight: 400;
+  	color: #000000;
+	text-decoration: none;
+	font-family: 'Nova Mono';
+}

@@ -21,19 +21,16 @@ module.exports = function(settings) {
             redirectTo: '/'
         });
     }
-    // Bootstrap controllers
-    // var files = require.context('./', true, /\/(?!index).*\.js$/);
-    // files.keys().forEach(function(element) {
-    //     files(element);
-    // });    
+
+    var files = require.context('./', true, /\/(?!index).*\.js$/);
+    files.keys().forEach(function(element) {
+        files(element);
+    });    
 
     // Bootstrap dependencies
 
     require('../../factories/auth');
     require('../../factories/rest');
     require('../../factories/session');
-
-    require('./controllers/IndexCtrl');
-    require('./controllers/SignCtrl');
 
 }

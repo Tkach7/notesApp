@@ -14,6 +14,7 @@ const vendors = require('main-bower-files');
 const filter = require('gulp-filter');
 
 const webpack = webpackStream.webpack;
+const importCss = require('gulp-import-css');
 
 
 
@@ -85,8 +86,12 @@ gulp.task('vendors', () => {
 });
 
 // @gulp:css
-gulp.task('css', () => {
-	return console.log('Build js');
+// Make styles
+gulp.task('css', function() {
+    return gulp.src('src/css/**/*.css')
+        .pipe(plumber())
+        .pipe(importCss())
+        .pipe(gulp.dest('public/css'));
 });
 
 // @gulp:html
