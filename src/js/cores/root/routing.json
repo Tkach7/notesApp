@@ -2,9 +2,5 @@
 	"uri": "/navigation",
 	"controller": "IndexCtrl",
 	"title": "Навигация"
-},
-{
-	"uri": "/calendar",
-	controller: "CalendarCtrl",
-	"title": "Календарь"
-}]
+}
+]
