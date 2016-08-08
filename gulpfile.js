@@ -15,6 +15,7 @@ const filter = require('gulp-filter');
 
 const webpack = webpackStream.webpack;
 const importCss = require('gulp-import-css');
+const postcss = require('gulp-postcss');
 
 
 
@@ -90,7 +91,14 @@ gulp.task('vendors', () => {
 gulp.task('css', function() {
     return gulp.src('src/css/**/*.css')
         .pipe(plumber())
-        .pipe(importCss())
+        .pipe(postcss([
+            require('precss'),
+            require('postcss-clearfix'),
+            require('postcss-color-short'),
+            require('postcss-cssnext'),
+            require('postcss-size'),
+            require("postcss-colour-functions")
+        ]))
         .pipe(gulp.dest('public/css'));
 });
 

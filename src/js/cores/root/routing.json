@@ -1,6 +1,17 @@
 [{
-	"uri": "/navigation",
+	"uri": "/",
 	"controller": "IndexCtrl",
 	"title": "Навигация"
-}
-]
+}, {
+	"uri": "/calendar",
+	"controller": "IndexCtrl",
+	"title": "Навигация"
+}, {
+	"uri": "/todo",
+	"controller": "IndexCtrl",
+	"title": "Навигация"
+}, {
+	"uri": "/profile",
+	"controller": "IndexCtrl",
+	"title": "Навигация"
+}]

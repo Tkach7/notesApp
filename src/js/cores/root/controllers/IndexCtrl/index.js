@@ -10,20 +10,26 @@ function controller($scope, $window, Auth) {
         {
             name: 'Профиль',
             src: 'profile',
-            img: './img/calendar@2x.png'
+            img: 'images/calendar.png'
         },
         {
             name: 'Дела',
             src: 'works',
-            img: 'img/calendar.png'
+            img: '/images/todolist.png'
         },
         {
             name: 'Календарь',
             src: 'calendar',
-            img: 'img/calendar@2x.png'
+            img: '/images/calendar.png'
         }
     ]
-    console.log('hello, from root/c');
+
+    $scope.out = function() {
+        Auth.out(function(err, res) {
+            console.log(arguments);
+            $window.location.href = '/';
+        })
+    }
     // // Socket and notify example
     // Socket.on('hi', function(err, data) {
     //     if(err) return Notify('Error', 'Check WS Connection', err);

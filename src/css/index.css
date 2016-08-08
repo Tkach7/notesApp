@@ -1,7 +1,7 @@
 /** Components **/
-@import 'components/sign-form.css';
-@import 'components/welcome-page.css';
-@import 'components/navigation.css';
+@import './components/sign-form.css';
+@import './components/welcome-page.css';
+@import './components/navigation.css';
 
 html,
 body {

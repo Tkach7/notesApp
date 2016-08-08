@@ -7,7 +7,7 @@ module.exports = function(settings) {
         .constant('__routing', require('!json!./routing.json'))
         .config(config);
 
-    function config($routeProvider, $locationProvider, __routing) {
+    function config($routeProvider, $locationProvider, $httpProvider, __routing) {
 
         // Enable HTML5 location mode
         $locationProvider.html5Mode(true);
@@ -16,39 +16,38 @@ module.exports = function(settings) {
         __routing.forEach(function(route) {
             $routeProvider.when(route.uri, {
                 controller: route.controller,
-                template: require('./controllers/' + route.controller + '/view.html')
-                // ,
-                // resolve: {
-                //     factory: function($rootScope, $q, Auth) {
-                //         return $q(function(resolve) {
-                //             Auth.check(function(err, user) {
+                template: require('./controllers/' + route.controller + '/view.html'),
+                resolve: {
+                    factory: function($rootScope, $q, $window, Auth) {
+                        return $q(function(resolve) {
+                            Auth.check(function(err, user) {
 
-                //                 // Init user
-                //                 $rootScope.user = user;
+                                // Init user
+                                $rootScope.user = user;
 
-                //                 // Wrong session token exception
-                //                 if (err) {
-                //                     $window.location.href = '/';
-                //                     return;
-                //                 }
+                                // Wrong session token exception
+                                if (err) {
+                                    $window.location.href = '/';
+                                    return;
+                                }
 
-                //                 // Init app environment
-                //                 $rootScope.title = route.title;
-                //                 resolve(true);
-                //             });
-                //         });
-                //     }
-                // }
+                                // Init app environment
+                                $rootScope.title = route.title;
+                                resolve(true);
+                            });
+                        });
+                    }
+                }
             });
         });
 
         // Set unresolved(otherwise) route
         $routeProvider.otherwise({
-            redirectTo: '/navigation'
+            redirectTo: '/'
         });
 
         // Set Http Interceptor
-        // $httpProvider.interceptors.push('HttpInterceptor');
+        $httpProvider.interceptors.push('HttpInterceptor');
     }
 
     // function run(Socket, ExampleWorker) {
@@ -64,7 +63,7 @@ module.exports = function(settings) {
     // Bootstrap dependencies
     require('../../factories/auth');
     // require('../../factories/notify');
-    // require('../../factories/http');
+    require('../../factories/http');
     require('../../factories/rest');
     require('../../factories/session');
     // require('../../factories/socket');
