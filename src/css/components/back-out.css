@@ -1,0 +1,32 @@
+.back-out {
+	position: absolute;
+	top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+	width: 930px;
+}
+
+.logout {
+	cursor: pointer;
+	display: flex;
+	box-sizing: border-box;
+	height: 18px;
+	position: absolute;
+	right: 0;
+	top: 45px;
+}
+
+.logout-text {
+	display: flex;
+	align-items: center;
+	margin-left: 13px;
+}
+
+.logout-text-exit {
+	font-family: 'Nova Mono';
+  	font-size: 16px;
+  	font-weight: 400;
+  	color: #ffffff;
+}

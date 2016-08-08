@@ -37,13 +37,16 @@ let http = {
 let __guest = (settings) => {
 	require.ensure([], function(require) {
         require('./guest')(settings);
+        // require('../components/logout');
         angular.bootstrap(document, ['app']);
+        
     });
 }
 
 let __root = (settings) => {
 	require.ensure([], function(require) {
         require('./root')(settings);
+        require('../components/logout');
         angular.bootstrap(document, ['app']);
     });
 }
@@ -53,3 +56,4 @@ http.get(settings.backend + api.auth.check).then(() => {
 }, (err) => {
 	__guest(settings);
 });
+

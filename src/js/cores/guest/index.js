@@ -13,7 +13,16 @@ module.exports = function(settings) {
         __routing.forEach(function(route) {
             $routeProvider.when(route.uri, {
                 controller: route.controller,
-                template: require('./controllers/' + route.controller + '/view.html')
+                template: require('./controllers/' + route.controller + '/view.html'),
+                resolve: {
+                    factory: function($rootScope, $q) {
+                        return $q(function(resolve) {
+                            // Init app environment
+                            $rootScope.title = route.title;
+                            resolve(true);
+                        });
+                    }
+                }
             });
         });  
 

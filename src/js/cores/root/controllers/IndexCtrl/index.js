@@ -24,12 +24,6 @@ function controller($scope, $window, Auth) {
         }
     ]
 
-    $scope.out = function() {
-        Auth.out(function(err, res) {
-            console.log(arguments);
-            $window.location.href = '/';
-        })
-    }
     // // Socket and notify example
     // Socket.on('hi', function(err, data) {
     //     if(err) return Notify('Error', 'Check WS Connection', err);
