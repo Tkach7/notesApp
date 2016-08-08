@@ -13,9 +13,7 @@ let http = {
 			request.open("GET", url, true);
 			request.setRequestHeader(settings.auth.headerName, localStorage.getItem(settings.auth.sessionName) || null);
 			request.send();
-
 			request.onreadystatechange = () => {
-				
 				if (request.status >= 400 || request.status == 0) {
 					err.status = request.status;
 					return reject(err);
@@ -25,6 +23,11 @@ let http = {
 					res.status = request.status;
 					resolve(res);
 				}
+
+				// if (true) {
+				// 	res.status = request.status;
+				// 	resolve(res);
+				// }
 			}
 		});
 	}
@@ -45,7 +48,7 @@ let __root = (settings) => {
     });
 }
 
-http.get(settings.backend + '/auth').then((res) => {
+http.get(settings.backend + api.auth.check).then(() => {
 	__root(settings);
 }, (err) => {
 	__guest(settings);

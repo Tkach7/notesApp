@@ -10,10 +10,10 @@ function controller($scope, $window, Auth) {
     // Inputs validator
     // $scope.check = Check;
 
-    // // Error cleaner
-    // $scope.clean = function() {
-    //     $scope.err = false;
-    // }
+    // Error cleaner
+    $scope.clean = function() {
+        $scope.err = false;
+    }
 
     $scope.sign = (user) => {
         Auth.in($scope.user, function(err, res) {
