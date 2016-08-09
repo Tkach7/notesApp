@@ -2,6 +2,7 @@
     "auth": {
         "check": "/users/self",
         "in": "/sign/in",
+        "up": "/sign/up",
         "out": "/sign/out",
         "key": "/sign/key"
     }

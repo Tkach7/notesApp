@@ -1,21 +1,22 @@
 .back-out {
+	display: flex;
 	position: absolute;
 	top: 0;
     right: 0;
     bottom: 0;
     left: 0;
     margin: auto;
+    margin-top: 45px;
 	width: 930px;
 }
 
 .logout {
+	position: absolute;
+	right: 0;
 	cursor: pointer;
 	display: flex;
 	box-sizing: border-box;
 	height: 18px;
-	position: absolute;
-	right: 0;
-	top: 45px;
 }
 
 .logout-text {
@@ -29,4 +30,22 @@
   	font-size: 16px;
   	font-weight: 400;
   	color: #ffffff;
+}
+
+.back {
+	position: relative;
+	cursor: pointer;
+}
+
+.back-img {
+	height: 13px;
+}
+
+.back-link {
+	position: absolute;
+    left: 0;
+    top: 0;
+	display: block;
+	width: 100%;
+	height: 100%;
 }

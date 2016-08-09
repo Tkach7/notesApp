@@ -1,4 +1,8 @@
 <div class="back-out">
+	<div class="back" ng-if="checkPath()">
+		<a href="/" class="back-link"></a>
+		<img class="back-img" src="/images/back.png">
+	</div>
 	<div class="logout" ng-click='out()'>
 		<img src="images/exit.png" alt="exit" class="logout-img">
 		<div class="logout-text">

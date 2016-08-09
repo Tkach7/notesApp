@@ -3,7 +3,11 @@
 	"controller": "IndexCtrl",
 	"title": "Главная страница"
 }, {
-	"uri": "/sign",
-	"controller": "SignCtrl",
+	"uri": "/signin",
+	"controller": "SignInCtrl",
 	"title": "Войдите"
+}, {
+	"uri": "/signup",
+	"controller": "SignUpCtrl",
+	"title": "Регистраиция"
 }]

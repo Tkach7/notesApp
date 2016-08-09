@@ -23,11 +23,6 @@ let http = {
 					res.status = request.status;
 					resolve(res);
 				}
-
-				// if (true) {
-				// 	res.status = request.status;
-				// 	resolve(res);
-				// }
 			}
 		});
 	}
@@ -37,7 +32,7 @@ let http = {
 let __guest = (settings) => {
 	require.ensure([], function(require) {
         require('./guest')(settings);
-        // require('../components/logout');
+        // require('../components/header');
         angular.bootstrap(document, ['app']);
         
     });
@@ -46,7 +41,7 @@ let __guest = (settings) => {
 let __root = (settings) => {
 	require.ensure([], function(require) {
         require('./root')(settings);
-        require('../components/logout');
+        require('../components/header');
         angular.bootstrap(document, ['app']);
     });
 }

@@ -14,7 +14,7 @@ function controller($scope, $window, Auth) {
         },
         {
             name: 'Дела',
-            src: 'works',
+            src: 'todo',
             img: '/images/todolist.png'
         },
         {

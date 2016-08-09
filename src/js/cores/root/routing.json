@@ -4,14 +4,14 @@
 	"title": "Навигация"
 }, {
 	"uri": "/calendar",
-	"controller": "IndexCtrl",
-	"title": "Навигация"
+	"controller": "CalendarCtrl",
+	"title": "Календарь"
 }, {
 	"uri": "/todo",
-	"controller": "IndexCtrl",
-	"title": "Навигация"
+	"controller": "TodoCtrl",
+	"title": "Дела"
 }, {
 	"uri": "/profile",
-	"controller": "IndexCtrl",
-	"title": "Навигация"
+	"controller": "ProfileCtrl",
+	"title": "Профиль"
 }]
