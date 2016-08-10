@@ -69,4 +69,5 @@ module.exports = function(settings) {
     // require('../../factories/socket');
 
     require('../../components/header');
+    require('../../services/calendar.js');
 }

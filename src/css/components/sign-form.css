@@ -46,7 +46,6 @@
     font-size: 16px;
     font-weight: 400;
     color: #566495;
-    z-index: 1;
 }
 
 .sign-passwd {
@@ -72,8 +71,6 @@
     position: relative;
     display: flex;
     align-items: center;
-    // width: 322px;
-    // height: 40px;
 }
 
 .inp-item:not(:first-child) {
@@ -112,6 +109,6 @@
     color: #566495;
     box-sizing: border-box;
     padding: 11px 0 0 14px;
-    // z-index: 2;
+    pointer-events: none
 }
 

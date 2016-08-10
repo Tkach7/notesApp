@@ -9,7 +9,6 @@ function controller($scope, $window, Auth, $location) {
             $window.location.href = '/';
         });
     };
-    console.log(location.pathname);
     $scope.checkPath = () => {
     	return location.pathname != '/';
     };

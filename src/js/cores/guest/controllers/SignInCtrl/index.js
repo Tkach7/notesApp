@@ -13,7 +13,7 @@ function controller($scope, $window, $location, Auth, User) {
     $scope.checkInputs = () => {
         if ($scope.user.email === '' || $scope.user.password === '' ) {
             if ($scope.user.email === '') {
-                 $scope.placeholderEmail = 'Заполните поле';
+                $scope.placeholderEmail = 'Заполните поле';
                 $scope.errorRequiredEmail = true;
             }
             if ($scope.user.password === '') {
@@ -27,8 +27,10 @@ function controller($scope, $window, $location, Auth, User) {
     $scope.resetError = (item) => {
         if (item === 'email') {
             $scope.errorRequiredEmail = false;
+            $scope.placeholderEmail = '';
         } else {
-           $scope.errorRequiredPasswd = false; 
+            $scope.placeholderPassw = '';
+            $scope.errorRequiredPasswd = false; 
         }
     }
 
@@ -37,7 +39,8 @@ function controller($scope, $window, $location, Auth, User) {
             Auth.in($scope.user, function(err, res) {
                 
                 if (err && err.status != 404) {
-                    $scope.errorPasswd = 'Неверный пароль';
+                    $scope.user.password = '';
+                    $scope.placeholderPassw = 'Неверный пароль';
                     $scope.errorRequiredPasswd = true;
                     return;
                 }

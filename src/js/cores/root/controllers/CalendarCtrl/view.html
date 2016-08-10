@@ -1,0 +1,23 @@
+<article class="calendar">
+	<div class="calendar-header">
+		<span>Каленадрь</span>
+	</div>
+	<div class="year">
+		<button type="button" class="previous-year" ng-click="reduceYear()"></button>
+		<span class="current-year" ng-model="currentYear">{{calendar.currentYear}}</span>
+		<button type="button"  class="next-year" ng-click="increaseYear()"></button>
+	</div>
+	<div class="month">
+		<button type="button" class="previous-month" ng-click="reduceMonth()"></button>
+		<span class="current-month">{{calendar.currentMonth}}</span>
+		<button type="button"  class="next-month" ng-click="increaseMonth()"></button>
+	</div>
+	<section class="calendar-block">
+		<div class="weekday" ng-repeat="weekday in daysOfTheWeek">
+			{{weekday}}
+			<div class="num-day" ng-repeat="num in weekdaysWithNum[weekday]">
+				{{num}}
+			</div>
+		</div>
+	</section>
+</article>

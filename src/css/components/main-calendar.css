@@ -1,0 +1,38 @@
+.calendar {
+	position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+	width: 930px;
+	opacity: 0.95;
+	height: 80%;
+	border-radius: 2px;
+	background-color: #ffffff;
+}
+
+.calendar-header {
+	margin-top: 56px;
+	text-align: center;
+	font-size: 21px;
+	font-weight: 400;
+	color: #000000;
+}
+
+.calendar-block {
+	margin-top: 27px;
+	display: flex;
+	border: 1px solid #000;
+	width: 100%;
+}
+
+.month, .year {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+} 
+
+.weekday {
+	width: 30px;
+}
