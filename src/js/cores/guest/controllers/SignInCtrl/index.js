@@ -1,21 +1,23 @@
 module.exports = angular.module('app').controller('SignInCtrl', controller);
 
-function controller($scope, $window, Auth) {
+function controller($scope, $window, $location, Auth, User) {
 
-    $scope.user = {
-        email: '',
-        password: ''
-    }
+    $scope.user = User;
 
     //check valid requred
     $scope.errorRequiredEmail = false;
     $scope.errorRequiredPasswd = false;
+    $scope.placeholderEmail = 'Введите логин'
+    $scope.placeholderPassw = 'Введите пароль';
+
     $scope.checkInputs = () => {
         if ($scope.user.email === '' || $scope.user.password === '' ) {
             if ($scope.user.email === '') {
+                 $scope.placeholderEmail = 'Заполните поле';
                 $scope.errorRequiredEmail = true;
             }
             if ($scope.user.password === '') {
+                $scope.placeholderPassw = 'Заполните поле';
                 $scope.errorRequiredPasswd = true;
             }
             return false;
@@ -35,11 +37,13 @@ function controller($scope, $window, Auth) {
             Auth.in($scope.user, function(err, res) {
                 
                 if (err && err.status != 404) {
+                    $scope.errorPasswd = 'Неверный пароль';
                     $scope.errorRequiredPasswd = true;
                     return;
                 }
+
                 if (err && err.status === 404) {
-                    $window.location.href = '/signup';
+                    $location.path('/signup');
                     return;
                 }
 

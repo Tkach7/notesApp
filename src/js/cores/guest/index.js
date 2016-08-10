@@ -42,4 +42,6 @@ module.exports = function(settings) {
     require('../../factories/rest');
     require('../../factories/session');
 
+    require('../../models/user');
+
 }

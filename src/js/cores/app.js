@@ -32,7 +32,6 @@ let http = {
 let __guest = (settings) => {
 	require.ensure([], function(require) {
         require('./guest')(settings);
-        // require('../components/header');
         angular.bootstrap(document, ['app']);
         
     });
@@ -41,7 +40,6 @@ let __guest = (settings) => {
 let __root = (settings) => {
 	require.ensure([], function(require) {
         require('./root')(settings);
-        require('../components/header');
         angular.bootstrap(document, ['app']);
     });
 }

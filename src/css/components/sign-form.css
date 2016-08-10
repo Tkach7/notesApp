@@ -1,6 +1,5 @@
 .auth-window,
 .reg-window {
-    font-family: 'Nova Mono';
     position: absolute;
     top: 0;
     right: 0;
@@ -44,14 +43,13 @@
     height: 40px;
     border-radius: 2px;
     border: solid 1px #a3b1cd;
-    font-family: ProximaNova;
     font-size: 16px;
     font-weight: 400;
     color: #566495;
+    z-index: 1;
 }
 
 .sign-passwd {
-    margin-top: 11px;
 }
 
 .sign-enter {
@@ -71,8 +69,15 @@
 }
 
 .inp-item {
+    position: relative;
     display: flex;
     align-items: center;
+    // width: 322px;
+    // height: 40px;
+}
+
+.inp-item:not(:first-child) {
+    margin-top: 11px;
 }
 
 .error-img {
@@ -85,11 +90,28 @@
 .inp-item.error .sign-login,
 .inp-item.error .sign-passwd
 {
-    color: #cb7f7f;
     border: solid 1px #cda3a3;
 }
 
-.inp-item.error .error-img {
+.inp-item.error .error-img
+{
     display: block;
+}
+
+.inp-item.error .inp-err {
+    color: #cb7f7f;
+}
+
+.inp-err {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    font-weight: 400;
+    color: #566495;
+    box-sizing: border-box;
+    padding: 11px 0 0 14px;
+    // z-index: 2;
 }
 

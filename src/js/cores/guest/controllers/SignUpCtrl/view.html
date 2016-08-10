@@ -5,8 +5,8 @@
 	<form class="sign-form" ng-submit="signUp()">
 		<input name="login" type="text"  ng-model="user.email" class="sign-login" placeholder="Введите логин">
 		<input name='password' type="password" ng-model="user.password" class="sign-passwd" placeholder="Введите пароль">
-		<input name="repeat-password" type="text"  ng-model="user.repeat" class="sign-passwd" placeholder="Потворите пароль" ng-click="resetError()">
+		<input name="repeat-password" type="text"  ng-model="repeatPassw" class="sign-passwd" placeholder="Потворите пароль" ng-change="resetError()">
 		<input type="submit" value="Войти" class="sign-enter">
-		<span ng-if="diffirentPAssword">Пароли не совпадают</span>
+		<span ng-if="diffirentPassword">Пароли не совпадают</span>
 	</form>
 </aricle>

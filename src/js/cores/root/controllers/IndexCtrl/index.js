@@ -9,17 +9,17 @@ function controller($scope, $window, Auth) {
     $scope.navList = [
         {
             name: 'Профиль',
-            src: 'profile',
+            src: '/profile',
             img: 'images/calendar.png'
         },
         {
             name: 'Дела',
-            src: 'todo',
+            src: '/todo',
             img: '/images/todolist.png'
         },
         {
             name: 'Календарь',
-            src: 'calendar',
+            src: '/calendar',
             img: '/images/calendar.png'
         }
     ]

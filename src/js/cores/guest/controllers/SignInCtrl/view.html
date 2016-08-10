@@ -2,13 +2,15 @@
 	<div class="sign-caption">
 		<span class="sign-caption__text">Войти в приложение</span>
 	</div>
-	<form ng-submit="signIn()" class="sign-form" novalidate>
-		<div class="inp-item"  ng-class="{error: errorRequiredEmail}">
-			<input name="login" type="text"  ng-model="user.email" class="sign-login" placeholder="Введите логин" ng-click="resetError('email')">
+	<form ng-submit="signIn()" class="sign-form">
+		<div class="inp-item" ng-class="{error: errorRequiredEmail}">
+			<input name="login" type="text" ng-model="user.email" class="sign-login" ng-change="resetError('email')">
+			<label for="login" class="inp-err">{{placeholderEmail}}</label>
 			<img src="./images/alert.png" alt="error" class="error-img">
 		</div>
 		<div class="inp-item" ng-class="{error: errorRequiredPasswd}">
-			<input name='password' type="password" ng-model="user.password" class="sign-passwd" placeholder="Введите пароль" ng-click="resetError('password')">
+			<input name='password' type="password" ng-model="user.password" class="sign-passwd" ng-change="resetError('password')">
+			<label for="password" class="inp-err">{{placeholderPassw}}</label>
 			<img src="./images/alert.png" alt="error" class="error-img">
 		</div>
 		<input type="submit" value="Войти" class="sign-enter">

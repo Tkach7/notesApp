@@ -3,6 +3,8 @@
 @import './components/welcome-page.css';
 @import './components/navigation.css';
 @import './components/header.css';
+@import './components/profile.css';
+@import './components/main-calendar.css';
 
 html,
 body {
@@ -13,7 +15,6 @@ body {
 body {
 	margin: 0;
 	padding: 0;
-	font-family: 'Nova Mono';
 	background: #aaa;
 }
 

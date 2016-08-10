@@ -6,7 +6,7 @@
     bottom: 0;
     left: 0;
     margin: auto;
-    margin-top: 45px;
+    margin-top: 4%;
 	width: 930px;
 }
 
@@ -26,7 +26,6 @@
 }
 
 .logout-text-exit {
-	font-family: 'Nova Mono';
   	font-size: 16px;
   	font-weight: 400;
   	color: #ffffff;

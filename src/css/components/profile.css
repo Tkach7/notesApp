@@ -1,0 +1,134 @@
+.profile {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 930px;
+	height: 80%;
+	opacity: 0.95;
+  	border-radius: 2px;
+  	background-color: #ffffff;
+  	position: absolute;
+  	padding: 56px 0 101px 0;
+  	box-sizing: border-box;
+
+}
+
+.user-info {
+	padding: 0 0 70px 0;
+	box-sizing: border-box;
+}
+
+.user-info__header {
+	text-align: center;
+  	font-size: 21px;
+  	font-weight: 400;
+  	color: #000000;
+}
+
+.profile-avatar {
+	display: flex;
+	flex-direction: column;
+	margin-top: 57px;
+	align-items: center;
+}
+
+.avatar-img {
+	width: 140px;
+	height: 140px;
+	background-color: #d4d4d4;
+}
+
+.avatar-load {
+	background-color: #ffffff;
+	margin-top: 14px;
+	width: 109px;
+	height: 22px;
+	border-radius: 100px;
+	border: solid 1px #979797;
+	font-size: 11px;
+	font-weight: 400;
+	color: #000000;
+}
+
+.personal-info {
+	margin-top: 38px;
+	width: 322px;
+}
+
+.date-settings {
+	position: relative;
+	margin-top: 11px;
+	width: 322px;
+	height: 40px;
+}
+
+.user-name,
+.user-birthday {
+	box-sizing: border-box;
+	padding: 11px 14px;
+	width: 322px;
+	height: 40px;
+	border-radius: 2px;
+	border: solid 1px #a3b1cd;
+	font-size: 16px;
+	font-weight: 400;
+	color: #566495;
+}
+
+.calendaer-icon {
+	position: absolute;
+	right: 11px;
+	top: 7px;
+}
+
+.save-info {
+	margin-top: 35px;
+	width: 322px;
+	height: 40px;
+	border-radius: 2px;
+	border: #696c9b;
+	background-color: #696c9b;
+	font-size: 16px;
+	font-weight: 400;
+	color: #ffffff;
+}
+
+.user-sessions {
+	paddinh: 52px 0 0 0;
+}
+
+.user-sessions__header {
+	font-size: 21px;
+	font-weight: 400;
+	color: #000000;
+	text-align: center;
+}
+
+.user-sessions__item {
+	margin-top: 38px;
+	display: flex;
+	justify-content: space-between;
+	padding: 10px 15px;
+	box-sizing: border-box;
+	width: 615px;
+	height: 40px;
+	border-radius: 2px;
+	background-color: #ececec;
+}
+
+.sessions-text {
+	font-size: 16px;
+	font-weight: 400;
+	color: #333333;
+}
+
+.sessions-status {
+	font-size: 16px;
+	font-weight: 400;
+	color: #566495;
+}
