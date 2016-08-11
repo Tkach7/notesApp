@@ -1,6 +1,7 @@
 module.exports = angular.module('app').controller('IndexCtrl', controller);
 
-function controller($scope, $window, Auth) {
+function controller($scope, $window, Auth, User) {
+    
     $scope.out = function() {
         Auth.out(function(err) {
             $window.location.href = '/';

@@ -4,17 +4,17 @@
 			<span>Настройки профиля</span>
 		</div>
 		<div class="profile-avatar">
-			<img src="#" alt="user avatar" class="avatar-img">
-			<button class="avatar-load">Загрузить</button>
+			<img ng-src={{icon}} alt="user avatar" class="avatar-img">
+			<button class="avatar-load" ng-click="">Загрузить</button>
 		</div>
 		<div class="personal-info">
-			<input type="text" class="user-name" placeholder="Введите имя">
+			<input type="text" class="user-name" placeholder="Введите имя" ng-model="user.name">
 			<div class="date-settings">
-				<input type="text" class="user-birthday" placeholder="Введите дату рождения">
+				<input type="text" class="user-birthday" placeholder="Введите дату рождения" ng-model="user.birthday">
 				<img src="./images/little-calendar.png" class="calendaer-icon" alt="calendar">
 			</div>
 		</div>
-		<button class="save-info">Сохранить</button>
+		<button class="save-info" ng-click="saveDate()">Сохранить</button>
 	</section>
 	<section class="user-sessions">
 			<div class="user-sessions__header">

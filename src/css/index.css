@@ -1,5 +1,5 @@
 /** Components **/
-@import './components/sign-form.css';
+@import './components/sign.css';
 @import './components/welcome-page.css';
 @import './components/navigation.css';
 @import './components/header.css';
@@ -19,7 +19,9 @@ body {
 }
 
 .main {
-	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	width: 100%;
     height: 100%;
     background-image: linear-gradient(234deg, #194b7f, #b88cb7);

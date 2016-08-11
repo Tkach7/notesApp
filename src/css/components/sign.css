@@ -1,35 +1,25 @@
-.auth-window,
-.reg-window {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    margin: auto;
+.sign {
     width: 502px;
     opacity: 0.95;
     border-radius: 2px;
     background-color: #ffffff;
-    padding: 60px 0 0 90px;
+    padding: 60px 90px 82px;
     box-sizing: border-box;
-}
-
-.auth-window {
-    height: 378px;
 }
 
 .sign-caption {
     width: 100%;
-    position: relative;
-    left: 15%;
+    text-align: center;
 }
+
 .sign-caption__text {
     font-size: 21px;
     font-weight: 400;
-    color: #000000;
+    color: #000;
 }
 
 .sign-form {
+    width: 100%;
     margin-top: 40px;
     display: flex;
     flex-direction: column;
@@ -39,16 +29,13 @@
 .sign-passwd {
     box-sizing: border-box;
     padding-left: 4px;
-    width: 322px;
+    width: 100%;
     height: 40px;
     border-radius: 2px;
     border: solid 1px #a3b1cd;
     font-size: 16px;
     font-weight: 400;
     color: #566495;
-}
-
-.sign-passwd {
 }
 
 .sign-enter {
@@ -63,14 +50,9 @@
     border: none;
 }
 
-.reg-window {
-    height: 397px;
-}
-
 .inp-item {
     position: relative;
-    display: flex;
-    align-items: center;
+    width: 100%;
 }
 
 .inp-item:not(:first-child) {
@@ -78,8 +60,10 @@
 }
 
 .error-img {
+    position: absolute;
+    top: 20%;
+    right: -10%;
     display: none;
-    margin-left: 11px;
     width: 20px;
     height: 20px;
 }
@@ -102,6 +86,7 @@
 .inp-err {
     position: absolute;
     left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
     font-size: 16px;

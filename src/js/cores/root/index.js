@@ -1,11 +1,13 @@
-module.exports = function(settings) {
-
+module.exports = function(settings, user) {
     // Init Application
     var app = angular.module('app', ['ngRoute'])
         .constant('__settings', settings)
         .constant('__api', require('!json!../../../conf/rest.json'))
         .constant('__routing', require('!json!./routing.json'))
-        .config(config);
+        .config(config)
+        .run((User) => {
+            User.init(user);
+        });
 
     function config($routeProvider, $locationProvider, $httpProvider, __routing) {
 
@@ -67,7 +69,8 @@ module.exports = function(settings) {
     require('../../factories/rest');
     require('../../factories/session');
     // require('../../factories/socket');
-
+    require('../../factories/data.js');
     require('../../components/header');
     require('../../services/calendar.js');
+    require('../../models/user');
 }

@@ -1,12 +1,18 @@
-<aricle class="reg-window">
+<article class="sign">
 	<div class="sign-caption">
 		<span class="sign-caption__text">Регистрация email</span>
 	</div>
 	<form class="sign-form" ng-submit="signUp()">
-		<input name="login" type="text"  ng-model="user.email" class="sign-login" placeholder="Введите логин">
-		<input name='password' type="password" ng-model="user.password" class="sign-passwd" placeholder="Введите пароль">
-		<input name="repeat-password" type="text"  ng-model="repeatPassw" class="sign-passwd" placeholder="Потворите пароль" ng-change="resetError()">
+		<div class="inp-item">
+			<input name="login" type="text"  ng-model="user.email" class="sign-login" placeholder="Введите логин">
+		</div>
+		<div class="inp-item">
+			<input name='password' type="password" ng-model="user.password" class="sign-passwd" placeholder="Введите пароль">
+		</div>
+		<div class="inp-item">
+			<input name="repeat-password" type="text"  ng-model="repeatPassw" class="sign-passwd" placeholder="Потворите пароль" ng-change="resetError()">
+		</div>
 		<input type="submit" value="Войти" class="sign-enter">
 		<span ng-if="diffirentPassword">Пароли не совпадают</span>
 	</form>
-</aricle>
+</article>

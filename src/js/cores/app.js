@@ -20,6 +20,7 @@ let http = {
 				}
 
 				if (request.readyState == 4) {
+					res.data = JSON.parse(request.response)
 					res.status = request.status;
 					resolve(res);
 				}
@@ -37,15 +38,15 @@ let __guest = (settings) => {
     });
 }
 
-let __root = (settings) => {
+let __root = (settings, user) => {
 	require.ensure([], function(require) {
-        require('./root')(settings);
+        require('./root')(settings, user);
         angular.bootstrap(document, ['app']);
     });
 }
 
-http.get(settings.backend + api.auth.check).then(() => {
-	__root(settings);
+http.get(settings.backend + api.auth.check).then((res) => {
+	__root(settings, res.data);
 }, (err) => {
 	__guest(settings);
 });
