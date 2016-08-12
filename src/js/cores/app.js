@@ -3,6 +3,8 @@
 import settings from '../../conf/settings.json';
 import api from '../../conf/rest.json';
 
+
+
 let http = {
 	get: (url) => {
 		return new Promise((resolve, reject) => {

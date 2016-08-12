@@ -20,8 +20,8 @@
 			<div class="user-sessions__header">
 				<span>Ваши сессии</span>
 			</div>
-			<div class="user-sessions__item">
-				<span class="sessions-text">Что-то тут будет</span>
+			<div class="user-sessions__item" ng-repeat="session in sessions">
+				<span class="sessions-text">{{getSessionsInfo(session)}}</span>
 				<span class="sessions-status">Активна</span>
 			</div>
 	</section>
