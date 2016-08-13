@@ -1,4 +1,4 @@
-<article class="profile">
+<article class="profile col-md-12">
 	<section class="user-info">
 		<div class="user-info__header">
 			<span>Настройки профиля</span>
@@ -13,8 +13,8 @@
 				<input type="text" class="user-birthday" placeholder="Введите дату рождения" ng-model="user.birthday">
 				<img src="./images/little-calendar.png" class="calendaer-icon" alt="calendar">
 			</div>
+			<button class="save-info" ng-click="saveDate()">Сохранить</button>
 		</div>
-		<button class="save-info" ng-click="saveDate()">Сохранить</button>
 	</section>
 	<section class="user-sessions">
 			<div class="user-sessions__header">

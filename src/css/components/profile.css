@@ -1,18 +1,13 @@
 .profile {
+	max-height: 700px;
+	overflow: scroll;
 	opacity: 0.95;
   	border-radius: 2px;
   	background-color: #ffffff;
-  	box-sizing: border-box;
-  	padding-top: 56px;
-  	padding-bottom: 101px;
-
 }
 
 .user-info {
-	padding-left: 300px;
-	padding: 0;
-	padding-bottom: 70px;
-	box-sizing: border-box;
+	padding: 50px 0;
 	border-bottom: solid 1px #d0d0d0;
 }
 
@@ -20,7 +15,7 @@
 	text-align: center;
   	font-size: 21px;
   	font-weight: 400;
-  	color: #000000;
+  	color: #000;
 }
 
 .profile-avatar {
@@ -33,7 +28,6 @@
 .avatar-img {
 	width: 140px;
 	height: 140px;
-	background-color: #d4d4d4;
 }
 
 .avatar-load {
@@ -49,8 +43,10 @@
 }
 
 .personal-info {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	margin-top: 38px;
-	width: 322px;
 }
 
 .date-settings {
@@ -92,18 +88,18 @@
 }
 
 .user-sessions {
-	padding-top: 62px;
+	padding: 40px 170px;
 }
 
 .user-sessions__header {
 	font-size: 21px;
 	font-weight: 400;
-	color: #000000;
+	color: #000;
 	text-align: center;
 }
 
 .user-sessions__item {
-	margin-top: 38px;
+	margin-top: 15px;
 	display: flex;
 	justify-content: space-between;
 	padding: 10px 15px;
@@ -124,4 +120,17 @@
 	font-size: 16px;
 	font-weight: 400;
 	color: #566495;
+}
+
+.save-info:hover {
+    background-color: #7a7db2;
+}
+
+.save-info:active {
+    background-color: #787a9e;
+}
+
+.user-name:focus,
+.user-birthday:focus {
+    color: #2a2b30;
 }

@@ -1,12 +1,20 @@
-<div class="back-out">
-	<div class="back" ng-if="checkPath()">
-		<a href="/" class="back-link"></a>
-		<img class="back-img" src="/images/back.png">
-	</div>
-	<div class="logout" ng-click='out()'>
-		<img src="images/exit.png" alt="exit" class="logout-img">
-		<div class="logout-text">
-			<span class="logout-text-exit">Выйти</span>
+<section class="row back-out">
+	<div class="col-md-6">
+		<div class="back" ng-if="checkPath()">
+			<div class="back-link">
+				<a href="/" class="back-link__item"></a>
+				<img class="back-img" src="/images/back.png">
+			</div>
 		</div>
 	</div>
-</div>
+	<div class="col-md-6">
+		<div class="logout">
+			<div class="logout-link" ng-click='out()'>
+				<img src="images/exit.png" alt="exit" class="logout-img">
+				<div class="logout-text">
+					<span>Выйти</span>
+				</div>
+			</div>
+		</div>
+	</div>	
+</section>

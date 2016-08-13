@@ -97,3 +97,16 @@
     pointer-events: none
 }
 
+.sign-enter:hover {
+    background-color: #7a7db2;
+}
+
+.sign-enter:active {
+    background-color: #787a9e;
+}
+
+.sign-login:focus,
+.sign-passwd:focus {
+    color: #2a2b30;
+}
+

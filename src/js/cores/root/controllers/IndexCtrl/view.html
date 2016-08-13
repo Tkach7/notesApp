@@ -1,9 +1,11 @@
-<section class="nav-panel"> 
-	<div ng-repeat="item in navList" class="nav__item">
-		<a href="{{item.src}}" class="nav__link"></a>
-		<img ng-src="{{item.img}}" alt="{{item.name}}" class="nav__item__img">
-		<div class="nav__item__name">
-			<span class="nav__text">{{item.name}}</span>
+<section class="row">
+	<div class="col-md-4 nav-block" ng-repeat="item in navList">
+		<div class="nav__item">
+			<a href="{{item.src}}" class="nav__link"></a>
+			<img ng-src="{{item.img}}" alt="{{item.name}}" class="nav__item__img">
+			<div class="nav__item__name">
+				<span class="nav__text">{{item.name}}</span>
+			</div>
 		</div>
-	</div>
+	</div>		
 </section>
