@@ -58,6 +58,7 @@
 
 .user-name,
 .user-birthday {
+	outline: none;
 	box-sizing: border-box;
 	padding: 11px 14px;
 	width: 322px;
@@ -133,4 +134,5 @@
 .user-name:focus,
 .user-birthday:focus {
     color: #2a2b30;
+	border: solid 1px #749ae3;
 }

@@ -27,6 +27,7 @@
 
 .sign-login,
 .sign-passwd {
+    outline: none;
     box-sizing: border-box;
     padding-left: 4px;
     width: 100%;
@@ -108,5 +109,6 @@
 .sign-login:focus,
 .sign-passwd:focus {
     color: #2a2b30;
+    border: solid 1px #749ae3;
 }
 

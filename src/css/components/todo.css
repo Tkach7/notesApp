@@ -1,0 +1,148 @@
+.todo {
+	max-height: 700px;
+	overflow: scroll;
+	opacity: 0.95;
+	border-radius: 2px;
+	background-color: #fff;
+}
+
+.new-todo {
+	padding: 56px 87px;
+	border-bottom: solid 1px #d0d0d0;
+}
+
+.todo-caption {
+	text-align: center;
+	font-size: 21px;
+	font-weight: 400;
+	color: #000;
+}
+
+.add-todo {
+	display: flex;
+	margin-top: 50px;
+}
+
+.add-todo-item {
+	display: flex;
+	position: relative;
+}
+
+.calendar-img {
+	margin-left: 19px;
+	margin-right: 12px;
+	width: 18px;
+	height: 20px;
+}
+
+.add-todo-date {
+	position: absolute;
+	right: 0;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	font-size: 11px;
+	font-weight: 400;
+	color: #575757;
+}
+
+.new-todo-inp {
+	padding: 0 170px 0 13px;
+	outline: none;
+	border-radius: 2px;
+	border: solid 1px #a3b1cd;
+	width: 615px;
+	height: 40px;
+	font-size: 16px;
+	font-weight: 400;
+	color: #566495;
+}
+
+.add-todo-btn {
+	margin-left: 12px;
+	width: 116px;
+	height: 40px;
+	border-radius: 2px;
+	background-color: #696c9b;
+	font-size: 16px;
+	font-weight: 400;
+	color: #fff;
+}
+
+.current-todo {
+	padding: 66px 87px;
+	border-bottom: solid 1px #d0d0d0;
+}
+
+.current-todo-item {
+	width: 750px;
+	height: 40px;
+	border-radius: 2px;
+	background-color: #ececec;
+	padding: 0 14px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.current-todo-item:not(:first-child) {
+	margin-top: 15px;
+}
+
+.current-todo-date {
+	font-size: 11px;
+	font-weight: 400;
+	color: #575757;
+}
+
+.finish-todo {
+	padding: 61px 87px;
+}
+
+.finish-todo-item {
+	display: flex;
+}
+
+.finish-todo-inp {
+	padding-left: 15px;
+	display: flex;
+	align-items: center;
+	width: 615px;
+	height: 40px;
+	border-radius: 2px;
+	background-color: #ececec;
+}
+
+.finish-todo-item:not(:first-child) {
+	margin-top: 15px;
+}
+
+.label-text {
+	margin-left: 15px;
+}
+
+.finish-todo-tools {
+	display: flex;
+	align-items: center;
+	margin-left: 30px;
+}
+
+.delete-todo {
+	margin-left: 13px;
+	font-size: 16px;
+	font-weight: 400;
+	color: #696c9b;
+}
+
+.add-todo-btn:hover {
+    background-color: #7a7db2;
+}
+
+.add-todo-btn:active {
+    background-color: #787a9e;
+}
+
+.new-todo-inp:focus {
+    color: #2a2b30;
+    border: solid 1px #749ae3;
+}

@@ -1,0 +1,78 @@
+<article class="todo col-md-12">
+    <div class="new-todo">
+        <div class="todo-caption">
+            <span>Дела</span>
+        </div>
+        <div class="add-todo">
+            <div class="add-todo-item">
+                <input class="new-todo-inp" ng-model="todo" placeholder="Новое дело">
+                <div class="add-todo-date">
+                    <span ng-bind="dateTodo"></span>
+                    <img src="./images/little-calendar.png" alt="calendar" class="calendar-img">
+                </div>
+            </div>
+            <button class="add-todo-btn">Добавить</button>
+        </div>
+    </div>
+    <div class="current-todo">
+        <div class="current-todo-item">
+            <div>
+                <input type="checkbox" class="current-todo-inp" name="current-todo">
+                <label for="current-todo" class="label-text">Подготовить отчеты</label>
+            </div>
+            <div class="current-todo-date">
+                <span>26 Августа 2016</span>
+            </div>
+        </div>
+        <div class="current-todo-item">
+            <div class="current-todo-inp">
+                <input type="checkbox" name="current-todo">
+                <label for="current-todo" class="label-text">Подготовить отчеты</label>
+            </div>
+            <div class="current-todo-date">
+                <span>26 Августа 2016</span>
+            </div>
+        </div>
+        <div class="current-todo-item">
+            <div>
+                <input type="checkbox" name="current-todo">
+                <label for="current-todo" class="label-text">Подготовить отчеты</label>
+            </div>
+            <div class="current-todo-date">
+                <span>26 Августа 2016</span>
+            </div>
+        </div>       
+    </div>
+    <div class="finish-todo">
+        <div class="finish-todo-item">
+            <div class="finish-todo-inp">
+                <input type="checkbox"  name="finish-todo" checked>
+                <label for="finish-todo" class="label-text">Сварить борщ</label>
+            </div>
+            <div class="finish-todo-tools">
+                <img src="./images/delete.png" alt="delete todo" class="delete-todo-img">
+                <span class="delete-todo">Удалить</span>
+            </div>
+        </div>
+        <div class="finish-todo-item">
+            <div class="finish-todo-inp">
+                <input type="checkbox"  name="finish-todo" checked>
+                <label for="finish-todo" class="label-text">Сварить борщ</label>
+            </div>
+            <div class="finish-todo-tools">
+                <img src="./images/delete.png" alt="delete todo" class="delete-todo-img">
+                <span class="delete-todo">Удалить</span>
+            </div>
+        </div>
+        <div class="finish-todo-item">
+            <div class="finish-todo-inp">
+                <input type="checkbox"  name="finish-todo" checked>
+                <label for="finish-todo" class="label-text">Сварить борщ</label>
+            </div>
+            <div class="finish-todo-tools">
+                <img src="./images/delete.png" alt="delete todo" class="delete-todo-img">
+                <span class="delete-todo">Удалить</span>
+            </div>
+        </div>
+    </div>
+</article>
