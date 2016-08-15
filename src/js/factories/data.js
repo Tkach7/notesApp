@@ -7,11 +7,9 @@ module.exports = angular.module('app').factory('Data', function(Rest, Session, _
                 birthday: sign.birthday,
             });
         },
-        saveTodo: function(sign) {
-        	Rest.patch(__api.user.data + '/' + sign.email, {
-                email: sign.email,
-                todo: sign.todo
-            });
+        saveTodo: function(todoModel) {
+            // Put new todo
+            return Rest.put(__api.user.todo, todoModel);
         }
     };
 });
