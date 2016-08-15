@@ -9,7 +9,7 @@ function controller($scope, User, Data) {
 	} 
 	$scope.saveDate = () => {
 		if ($scope.user.name || $scope.user.birthday) {
-			Data.save($scope.user);
+			Data.savePersonalInfo($scope.user);
 			console.log('Данные добавлены');
 			return;
 		} else {
