@@ -1,39 +1,44 @@
-<article class="todo col-md-12">
-    <div class="new-todo">
-        <div class="todo-caption">
-            <span>Дела</span>
-        </div>
-        <div class="add-todo">
-            <div class="add-todo-item">
-                <input class="new-todo-inp" ng-model="todoModel.title" placeholder="Новое дело">
-                <div class="add-todo-date">
-                    <span ng-bind="dateNewTodo"></span>
-                    <img src="./images/little-calendar.png" alt="calendar" class="calendar-img">
+<article class="row">
+    <div class="todo col-sm-12 col-md-6 col-lg-12">
+        <div class="new-todo">
+            <div class="todo-caption">
+                <span>Дела</span>
+                <ul>
+                    <li ng-repeat="t in test">{{ t }}</li>
+                </ul>
+            </div>
+            <div class="add-todo">
+                <div class="add-todo-item">
+                    <input class="new-todo-inp" ng-model="todoModel.title" placeholder="Новое дело">
+                    <div class="add-todo-date">
+                        <span ng-bind="dateNewTodo"></span>
+                        <img src="./images/little-calendar.png" alt="calendar" class="calendar-img">
+                    </div>
                 </div>
+                <button class="add-todo-btn" ng-click="addTodo()" ng-show="checkField()">Добавить</button>
             </div>
-            <button class="add-todo-btn" ng-click="addTodo()">Добавить</button>
         </div>
-    </div>
-    <div class="current-todo">
-        <div class="current-todo-item" ng-repeat="todo in user.todo | todoStatus: false">
-            <div>
-                <input type="checkbox" class="current-todo-inp" name="current-todo">
-                <label for="current-todo" class="label-text">{{todo.title}}</label>
-            </div>
-            <div class="current-todo-date">
-                <span>{{todo.time}}</span>
-            </div>
-        </div>     
-    </div>
-    <div class="finish-todo">
-        <div class="finish-todo-item" ng-repeat="todo in user.todo | todoStatus: true">
-            <div class="finish-todo-inp">
-                <input type="checkbox"  name="finish-todo" checked>
-                <label for="finish-todo" class="label-text">{{todo.title}}</label>
-            </div>
-            <div class="finish-todo-tools">
-                <img src="./images/delete.png" alt="delete todo" class="delete-todo-img">
-                <span class="delete-todo">Удалить</span>
+        <div class="current-todo">
+            <div class="current-todo-item" ng-repeat="todo in user.todo track by $index" ng-if="!todo.status">
+                <div class="current-todo-inp">
+                    <input type="checkbox" ng-model="todo.status" ng-change="changeStatus()">
+                    <span for="current-todo" class="todo-text" ng-bind="todo.title"></span>
+                </div>
+                <div class="current-todo-date">
+                    <span ng-bind="todo.time"></span>
+                </div>
+            </div>     
+        </div>
+        <div class="finish-todo" ng-show="checkFinishTodo()">
+            <div class="finish-todo-item" ng-repeat="todo in user.todo track by $index" ng-if="todo.status">
+                <div class="finish-todo-inp">
+                    <input type="checkbox" ng-model="todo.status" ng-change="changeStatus()">
+                    <span for="finish-todo" class="todo-text" ng-bind="todo.title"></span>
+                </div>
+                <div class="finish-todo-tools">
+                    <img src="./images/delete.png" alt="delete todo" class="delete-todo-img">
+                    <button class="delete-todo" ng-click="deleteTodo($index, todo)">Удалить</button>
+                </div>
             </div>
         </div>
     </div>

@@ -73,5 +73,4 @@ module.exports = function(settings, user) {
     require('../../components/header');
     require('../../services/calendar.js');
     require('../../models/user');
-    require('../../filters/todoStatus.js');
 }

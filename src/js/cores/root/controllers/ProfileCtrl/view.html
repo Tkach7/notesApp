@@ -1,28 +1,30 @@
-<article class="profile col-md-12">
-	<div class="user-info">
-		<div class="user-info__header">
-			<span>Настройки профиля</span>
-		</div>
-		<div class="profile-avatar">
-			<img ng-src={{icon}} alt="user avatar" class="avatar-img">
-			<button class="avatar-load" ng-click="">Загрузить</button>
-		</div>
-		<div class="personal-info">
-			<input type="text" class="user-name" placeholder="Введите имя" ng-model="user.name">
-			<div class="date-settings">
-				<input type="text" class="user-birthday" placeholder="Введите дату рождения" ng-model="user.birthday">
-				<img src="./images/little-calendar.png" class="calendaer-icon" alt="calendar">
+<article class="row">
+	<div class="profile col-sm-12 col-md-6 col-lg-12">
+		<div class="user-info">
+			<div class="user-info__header">
+				<span>Настройки профиля</span>
 			</div>
-			<button class="save-info" ng-click="saveDate()">Сохранить</button>
+			<div class="profile-avatar">
+				<img ng-src={{icon}} alt="user avatar" class="avatar-img">
+				<button class="avatar-load" ng-click="">Загрузить</button>
+			</div>
+			<div class="personal-info">
+				<input type="text" class="user-name" placeholder="Введите имя" ng-model="user.name">
+				<div class="date-settings">
+					<input type="text" class="user-birthday" placeholder="Введите дату рождения" ng-model="user.birthday">
+					<img src="./images/little-calendar.png" class="calendaer-icon" alt="calendar">
+				</div>
+				<button class="save-info" ng-click="saveDate()" ng-show="checkField()">Сохранить</button>
+			</div>
 		</div>
-	</div>
-	<div class="user-sessions">
-			<div class="user-sessions__header">
-				<span>Ваши сессии</span>
-			</div>
-			<div class="user-sessions__item" ng-repeat="session in sessions">
-				<span class="sessions-text">{{getSessionsInfo(session)}}</span>
-				<span class="sessions-status">Активна</span>
-			</div>
+		<div class="user-sessions">
+				<div class="user-sessions__header">
+					<span>Ваши сессии</span>
+				</div>
+				<div class="user-sessions__item" ng-repeat="session in user.sessions track by $index">
+					<span class="sessions-text" ng-bind="getSessionsInfo(session)" ng-class="{current: checkCurrentSession(session)}"></span>
+					<button class="delete-session" ng-click="deleteSession($index, session)">Terminated</button>
+				</div>
+		</div>
 	</div>
 </article>

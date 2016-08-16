@@ -22,7 +22,8 @@
     "crypto-js": "^3.1.6",
     "lodash": "^4.14.1",
     "bootstrap-grid-only": "*",
-    "reset-css": "^2.0.2011012603"
+    "reset-css": "^2.0.2011012603",
+    "angular-img-cropper": "^1.1.0"
   },
   "overrides": {
     "crypto-js": {

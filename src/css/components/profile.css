@@ -7,7 +7,7 @@
 }
 
 .user-info {
-	padding: 50px 0;
+	padding: 50px 304px;
 	border-bottom: solid 1px #d0d0d0;
 }
 
@@ -89,7 +89,10 @@
 }
 
 .user-sessions {
-	padding: 40px 170px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 40px 0;
 }
 
 .user-sessions__header {
@@ -117,7 +120,15 @@
 	color: #333333;
 }
 
-.sessions-status {
+.sessions-text.current {
+	color: red;
+}
+
+.delete-session {
+	cursor: pointer;
+	border: none;
+	background: #ececec;
+	outline: none;
 	font-size: 16px;
 	font-weight: 400;
 	color: #566495;
