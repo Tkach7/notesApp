@@ -3,10 +3,14 @@
 }
 .back {
 	width: 465px;
+	
 }
 
 .back-link {
 	cursor: pointer;
+	position: relative;
+	width: 25px;
+	
 }
 
 .back-img {

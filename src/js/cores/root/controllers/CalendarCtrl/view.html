@@ -1,23 +1,54 @@
 <article class="calendar">
-	<div class="calendar-header">
-		<span>Каленадрь</span>
+	<div class="calenadr-caption">
+		<span>Календарь</span>
 	</div>
-	<div class="year">
-		<button type="button" class="previous-year" ng-click="reduceYear()"></button>
-		<span class="current-year" ng-model="currentYear">{{calendar.currentYear}}</span>
-		<button type="button"  class="next-year" ng-click="increaseYear()"></button>
+	<div class="switch-bar">
+		<img src="/images/arrow-left.png" class="previous-month" type="img" alt="left arrow" ng-click="getPrevMonth()">
+		<span class="data-info" ng-bind="month.title | normData"></span>
+		<img src="/images/arrow-right.png" class="next-month" type="img" alt="right arrow" ng-click="nextMonth()">
 	</div>
-	<div class="month">
-		<button type="button" class="previous-month" ng-click="reduceMonth()"></button>
-		<span class="current-month">{{calendar.currentMonth}}</span>
-		<button type="button"  class="next-month" ng-click="increaseMonth()"></button>
-	</div>
-	<section class="calendar-block">
-		<div class="weekday" ng-repeat="weekday in daysOfTheWeek">
-			{{weekday}}
-			<div class="num-day" ng-repeat="num in weekdaysWithNum[weekday]">
-				{{num}}
-			</div>
+	<section class="calendar-panel">
+		<div class="week-panel">
+			<ul class="week">
+				<li class="weekday">ПН</li>
+				<li class="weekday">ВТ</li>
+				<li class="weekday">СР</li>
+				<li class="weekday">ЧТ</li>
+				<li class="weekday">ПТ</li>
+				<li class="weekday">СБ</li>
+				<li class="weekday">ВС</li>
+			</ul>
+		</div>
+		<div class="month-panel">
+			<ul class="month">
+				<li class="month-item" ng-repeat="day in month.days">
+					<div class="month-item-info">
+						<div class="day-num">
+							<span class="day-num" ng-bind="day.value | date: 'dd'"></span>
+						</div>
+						<div class="day-todo">
+							<div class="todo-title">
+								<span>Посадить деревоfdfsdhjkdshfkjdshfkjhsdhdkjssfdsfdsfds</span>
+							</div>
+							<div class="todo-time">
+								<span>16:00</span>
+							</div>
+						</div>
+						<div class="day-todo">
+							<div class="todo-title">
+								<span >Посадить деревоfdfsdhjkdshfkjdshfkjhsdhdkjssfdsfdsfds</span>
+							</div>
+							<div class="todo-time">
+								<span>16:00</span>
+							</div>
+						</div>
+						<div class="show-more">
+							<span>Еще задачи</span>
+							<img src="./images/else.png" alt="show more" class="show-more-img">
+						</div>
+					</div>
+				</li>
+			</ul>
 		</div>
 	</section>
 </article>

@@ -1,32 +1,130 @@
 .calendar {
-	width: 930px;
+	max-height: 700px;
 	opacity: 0.95;
-	height: 70%;
 	border-radius: 2px;
-	background-color: #ffffff;
+	background-color: #fff;
+	padding-top: 56px;
+	overflow: scroll;
 }
 
-.calendar-header {
-	margin-top: 56px;
+.calenadr-caption {
 	text-align: center;
 	font-size: 21px;
+	font-weight: 400;
+	color: #000;
+}
+
+.switch-bar {
+	margin-top: 58px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.previous-month,
+ .next-month {
+	cursor: pointer;
+	width: 7px;
+	height: 12px;
+}
+
+.data-info {
+	padding: 0 54px;
+	font-size: 16px;
+	font-weight: 400;
+	color: #335588;
+}
+
+.calendar-panel {
+	margin-top: 27px;
+}
+
+.week-panel {
+	width: 924px;
+  	background-color: #9fb3d1;
+}
+
+.week {
+	padding: 0;
+	margin: 0;
+	display: flex;
+}
+
+.weekday {
+	list-style-type: none;
+	padding: 10px 105px 10px 10px;
+	font-size: 13px;
+	font-weight: 700;
+	color: #fff;
+}
+
+.month-panel {
+	width: 924px;
+}
+
+.month {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.month-item {
+	list-style-type: none;
+	width: 132px;
+	height: 120px;
+	border: solid 1px #d0d0d0;
+}
+
+.day-num {
+	text-align: right;
+}
+
+.month-item-info {
+	padding: 0 5px;
+}
+
+.day-todo {
+	width: 123px;
+	height: 22px;
+	border-radius: 3px;
+	background-color: #dadfe6;
+	font-size: 11px;
+	font-weight: 400;
+	color: #000000;
+	display: flex;
+	align-items: center;
+}
+
+.day-todo:not(:first-child) {
+	margin-top: 6px;
+}
+
+.todo-title {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.todo-time {
+	margin-left: 3px;
+}
+
+.show-more {
+	padding: 5px 7px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	cursor: pointer;
+	margin-top: 6px;
+	border-radius: 3px;
+	border: solid 1px #979797;
+	font-size: 11px;
 	font-weight: 400;
 	color: #000000;
 }
 
-.calendar-block {
-	margin-top: 27px;
-	display: flex;
-	border: 1px solid #000;
-	width: 100%;
-}
-
-.month, .year {
-	display: flex;
-	justify-content: space-between;
-	width: 100%;
-} 
-
-.weekday {
-	width: 30px;
+.show-more-img {
+	width: 8px;
+	height: 8px;
 }

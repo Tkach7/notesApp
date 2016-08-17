@@ -28,6 +28,9 @@
   "overrides": {
     "crypto-js": {
       "main": "crypto-js.js"
+    },
+    "moment": {
+      "main": "min/moment-with-locales.min.js"
     }
   }
 }

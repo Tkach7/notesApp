@@ -1,4 +1,5 @@
 module.exports = function(settings, user) {
+    moment.locale('ru');
     // Init Application
     var app = angular.module('app', ['ngRoute'])
         .constant('__settings', settings)
@@ -73,4 +74,5 @@ module.exports = function(settings, user) {
     require('../../components/header');
     require('../../services/calendar.js');
     require('../../models/user');
+    require('../../filters/normalData.js');
 }

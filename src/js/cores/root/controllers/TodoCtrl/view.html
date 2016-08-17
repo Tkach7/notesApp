@@ -18,7 +18,7 @@
                 <button class="add-todo-btn" ng-click="addTodo()" ng-show="checkField()">Добавить</button>
             </div>
         </div>
-        <div class="current-todo">
+        <div class="current-todo" ng-show="checkStatusTodo(false)">
             <div class="current-todo-item" ng-repeat="todo in user.todo track by $index" ng-if="!todo.status">
                 <div class="current-todo-inp">
                     <input type="checkbox" ng-model="todo.status" ng-change="changeStatus()">
@@ -29,7 +29,10 @@
                 </div>
             </div>     
         </div>
-        <div class="finish-todo" ng-show="checkFinishTodo()">
+        <div class="nothing-todo" ng-show="!checkStatusTodo(false)">
+            <span>Молодец! Ты выполнил все тудухи! Можешь наконец-то выйти на улицу!</span>
+        </div>
+        <div class="finish-todo" ng-show="checkStatusTodo(true)">
             <div class="finish-todo-item" ng-repeat="todo in user.todo track by $index" ng-if="todo.status">
                 <div class="finish-todo-inp">
                     <input type="checkbox" ng-model="todo.status" ng-change="changeStatus()">

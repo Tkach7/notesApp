@@ -1,64 +1,41 @@
 module.exports = angular.module('app').service('Calendar', function() {
-    this.currentYear = moment().format('YYYY');
-    this.currentMonth = moment().format('MM');
-    this.getWeekdaysWithNum = (year, month) => {
-        var sortMonth = {
-            Mo: [],
-            Tu: [],
-            We: [],
-            Th: [],
-            Fr: [],
-            Sa: [],
-            Su: []
-        };
-        var dateFormat = year.concat('-', month);
-        var startPeriod = moment(dateFormat).startOf('month');
-        var countDaysInMonth = startPeriod.daysInMonth();
-        var dayName, dayNum;
-        for (let i = 0; i < countDaysInMonth; i++) {
-            dayNum = startPeriod.format('DD');
-            dayName = startPeriod.format('dd');
-            sortMonth[dayName].push(dayNum);
-            startPeriod = startPeriod.add(1, 'day');
-        };
-        // add days previous month
-        if (sortMonth.Mo[0] != '01') {
-            let countNotStartDays = 0;
-            for (let day in sortMonth) {
-                if (sortMonth[day][0] === '01') break;
-                countNotStartDays += 1;
-            }
-            let nextDay = moment().startOf('week').add(1, 'day');
-            let previousDay = moment()
-                .endOf('month')
-                .subtract(1, 'month')
-                .subtract(countNotStartDays - 1,'day').format('DD');
-            while (sortMonth[nextDay.format('dd')][0] != '01') {
-                sortMonth[nextDay.format('dd')].unshift(previousDay);
-                nextDay = nextDay.add(1, 'day');
-                previousDay = String(+previousDay + 1);
-            }
+    this.getMonth = function(index) {
+        index = index ? index : 0;
+        var current = moment().add(index, 'months').startOf('month');
+        var endOfCurrent = moment().add(index, 'months').endOf('M');
+
+        var month = {
+            title: current.format(),
+            days: []
         }
-        // add days next month
-        if (sortMonth.Su[sortMonth.Su.length - 1] != String(countDaysInMonth)) {
-            let indexLastDay = 1;
-            for (let day in sortMonth) {
-                if (sortMonth[day][sortMonth[day].length - 1] === String(countDaysInMonth)) break;
-                indexLastDay += 1;
-            }
-            let dayInNextMonth = '01';
-            startPeriod = moment().startOf('month').format('dd');
-            for (let i = 1; i <= 7; i++) {
-                if (i <= indexLastDay) {
-                    startPeriod = moment().startOf('month').add(i, 'day').format('dd');
-                } else {
-                    sortMonth[startPeriod].push(dayInNextMonth);
-                    dayInNextMonth = '0' + (+dayInNextMonth + 1);
-                    startPeriod = moment().startOf('month').add(i, 'day').format('dd');
-                }
-            }
+        // the days of the previous month
+        var daysPreviousMonth = current.weekday();
+        // start of month
+        var start;
+        switch (daysPreviousMonth) {
+            case 0: start = -5; break;
+            case 1: start = 1; break;
+            case 2: start = 0; break;
+            case 3: start = -1; break;
+            case 4: start = -2; break;
+            case 5: start = -3; break;
+            case 6: start = -4; break;    
+        }
+        // days of the following month
+        var daysFollowingMonth = endOfCurrent.weekday();
+        // end of month
+        var end = daysFollowingMonth === 0 ? 31 : current.daysInMonth() + (7 - daysFollowingMonth);
+        // build month's days grid
+        for (var i = start; i <= end; i++) {
+            month.days.push({
+                mute: (current > moment(new Date(current.year(), current.month(), i)) || endOfCurrent < moment(new Date(current.year(), current.month(), i))),
+                value: moment(new Date(current.year(), current.month(), i)).format()
+            });
         }
 
-        return sortMonth;
+        return month;
+    };
+    this.getIndex = function(time) {
+        return moment(time).startOf('month').diff(moment().startOf('month'), 'month');
     };
 });

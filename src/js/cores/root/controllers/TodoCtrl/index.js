@@ -8,6 +8,7 @@ function controller($scope, $timeout, User, Data) {
 		title: '',
 		time: moment().format()
 	}
+
 	$scope.changeStatus = () => {
 		Data.changeStatusTodo(User.todo).then((res) => {
 			}, (err) => {
@@ -15,20 +16,21 @@ function controller($scope, $timeout, User, Data) {
 				alert('Ooops! Look at console.');
 			});
 	};
+
 	$scope.checkField = () => {
 		return ($scope.todoModel.title && $scope.todoModel.time); 
 	}
+
 	$scope.deleteTodo = (index, todo) => {
-		console.log(todo);
 		Data.deleteTodo(todo._id).then((res) => {
 			User.todo.splice(index, 1);
-		})
+		});
 	}
 
-	$scope.checkFinishTodo = () => {
+	$scope.checkStatusTodo = (status) => {
 		let flag = false;
 		$scope.user.todo.forEach(function(item) {
-			if (item.status === true) {flag = true; return;}
+			if (item.status === status) {flag = true; return;}
 		});
 		return flag;
 	}
