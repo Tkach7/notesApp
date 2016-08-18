@@ -21,28 +21,38 @@
 		</div>
 		<div class="month-panel">
 			<ul class="month">
-				<li class="month-item" ng-repeat="day in month.days">
+				<li class="month-item" ng-repeat="day in month.days track by $index" ng-class="{mute: day.mute}">
 					<div class="month-item-info">
 						<div class="day-num">
-							<span class="day-num" ng-bind="day.value | date: 'dd'"></span>
+							<span class="day-num" ng-bind="day.value | date: 'dd'" ng-class="{notactive: day.mute 
+							&& $index < 6}"></span>
 						</div>
-						<div class="day-todo">
-							<div class="todo-title">
-								<span>Посадить деревоfdfsdhjkdshfkjdshfkjhsdhdkjssfdsfdsfds</span>
+						<div class="day-todo" ng-repeat="event in filtered = (day.events | limitTo: 2) track by $index" ng-class="{active: statusFullInfo}">
+							<div class="todo-title" ng-click="changeStatusFullInfo()">
+								<span ng-bind="event.title"></span>
 							</div>
-							<div class="todo-time">
-								<span>16:00</span>
+							<div class="todo-time" ng-click="changeStatusFullInfo()">
+								<span ng-bind="event.time | date: 'hh:mm' "></span>
+							</div>
+							<div class="full-info" ng-if="statusFullInfo">
+								<div class="full-title">
+									<span ng-bind="event.title"></span>
+								</div>
+								<div class="full-time">
+									<span ng-bind="event.time | date: 'dd'"></span>
+									<span ng-bind="event.time | normData"></span>
+								</div>
+								<div class="change-time">
+									<input type="text" class="change-time-item" ng-model="todoTime.hours">
+									<span class="colon">:</span>
+									<input type="text" class="change-time-item" ng-model="todoTime.minutes">
+								</div>
+								<button type="button" class="save-time" ng-click="saveTime(event);changeStatusFullInfo()" ng-show="checkTime()">
+									Сохранить
+								</button>
 							</div>
 						</div>
-						<div class="day-todo">
-							<div class="todo-title">
-								<span >Посадить деревоfdfsdhjkdshfkjdshfkjhsdhdkjssfdsfdsfds</span>
-							</div>
-							<div class="todo-time">
-								<span>16:00</span>
-							</div>
-						</div>
-						<div class="show-more">
+						<div class="show-more" ng-if="filtered.length > 2">
 							<span>Еще задачи</span>
 							<img src="./images/else.png" alt="show more" class="show-more-img">
 						</div>

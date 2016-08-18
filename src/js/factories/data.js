@@ -14,6 +14,10 @@ module.exports = angular.module('app').factory('Data', function(Rest, Session, _
             // Patch status todo
             return Rest.patch(__api.user.todo, {todo: todo});
         },
+        changeTimeTodo: function(todo) {
+            // Patch status todo
+            return Rest.patch(__api.user.todotime, todo);
+        },
         deleteTodo: function(todoId) {
             return Rest.delete(__api.user.todo + '/' + todoId);
         },

@@ -10,7 +10,7 @@ function controller($scope, $window, Auth, User) {
         {
             name: 'Профиль',
             src: '/profile',
-            img: 'images/calendar.png'
+            img: 'images/profile.png'
         },
         {
             name: 'Дела',

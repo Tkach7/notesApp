@@ -147,3 +147,9 @@
     color: #2a2b30;
 	border: solid 1px #749ae3;
 }
+
+.terminated-ses {
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+}

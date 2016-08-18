@@ -23,7 +23,10 @@
 				</div>
 				<div class="user-sessions__item" ng-repeat="session in user.sessions track by $index">
 					<span class="sessions-text" ng-bind="getSessionsInfo(session)" ng-class="{current: checkCurrentSession(session)}"></span>
-					<button class="delete-session" ng-click="deleteSession($index, session)">Terminated</button>
+					<div class="terminated-ses" ng-click="deleteSession($index, session)">
+						<img src="./images/terminate.png" alt="terminated">
+						<button class="delete-session">Terminated</button>
+					</div>
 				</div>
 		</div>
 	</div>

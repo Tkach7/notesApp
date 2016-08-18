@@ -59,6 +59,7 @@
 }
 
 .add-todo-btn {
+	outline: none;
 	margin-left: 12px;
 	width: 116px;
 	height: 40px;
@@ -171,4 +172,13 @@
 	border-bottom: solid 1px #d0d0d0;
 }
 
+.day-todo {
+	position: relative;
+	padding: 0 5px;
+}
 
+.day-num {
+	font-size: 16px;
+	font-weight: 400;
+	color: #9a9ea4;
+}

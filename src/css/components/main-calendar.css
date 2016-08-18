@@ -5,6 +5,9 @@
 	background-color: #fff;
 	padding-top: 56px;
 	overflow: scroll;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 .calenadr-caption {
@@ -15,10 +18,11 @@
 }
 
 .switch-bar {
+	width: 194px;
 	margin-top: 58px;
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	justify-content: space-between;
 }
 
 .previous-month,
@@ -29,7 +33,6 @@
 }
 
 .data-info {
-	padding: 0 54px;
 	font-size: 16px;
 	font-weight: 400;
 	color: #335588;
@@ -76,8 +79,16 @@
 	border: solid 1px #d0d0d0;
 }
 
+.month-item.mute {
+	background-color: #dadfe6;
+}
+
 .day-num {
 	text-align: right;
+}
+
+.day-num.notactive {
+	display: none;
 }
 
 .month-item-info {
@@ -93,7 +104,13 @@
 	font-weight: 400;
 	color: #000000;
 	display: flex;
+	justify-content: space-between;
 	align-items: center;
+}
+
+.day-todo.active {
+	background-color: #7989b4;
+	color: #fff;
 }
 
 .day-todo:not(:first-child) {
@@ -127,4 +144,76 @@
 .show-more-img {
 	width: 8px;
 	height: 8px;
+}
+
+.full-info {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	padding: 21px 42px 26px 24px;
+	box-sizing: border-box;
+	border-radius: 2px;
+	background-color: #fff;
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+}
+
+.full-title {
+	font-size: 16px;
+	font-weight: 400;
+	color: #333;
+}
+
+.full-time {
+	margin-top: 11px;
+	font-size: 11px;
+	font-weight: 400;
+	color: #415b8d;
+}
+
+.change-time {
+	margin-top: 18px;
+	display: flex;
+	align-items: center;
+}
+
+.change-time-item {
+	text-align: center;
+	width: 42px;
+	height: 32px;
+	border-radius: 2px;
+	border: solid 1px #a3b1cd;
+	font-size: 13px;
+	font-weight: 400;
+	color: #566495;
+}
+
+.colon {
+	margin-left: 7px;
+	font-size: 13px;
+	font-weight: 400;
+	color: #566495;
+}
+
+.change-time-item:not(:first-child) {
+	margin-left: 7px;
+}
+
+.save-time {
+	margin-top: 23px;
+	outline: none;
+	cursor: pointer;
+	border-radius: 3px;
+	border: solid 1px #979797;
+	background: #fff; 
+	font-size: 11px;
+	font-weight: 400;
+	color: #000;
+}
+
+.save-time:hover {
+    background-color: #7a7db2;
+}
+
+.save-time:active {
+    background-color: #787a9e;
 }
