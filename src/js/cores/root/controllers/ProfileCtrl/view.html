@@ -5,8 +5,26 @@
 				<span>Настройки профиля</span>
 			</div>
 			<div class="profile-avatar">
-				<img ng-src={{icon}} alt="user avatar" class="avatar-img">
-				<button class="avatar-load" ng-click="">Загрузить</button>
+				<img ng-src="{{ getSrcIcon(icon) }}" alt="user avatar" class="avatar-img" ng-click="selectIcon()">
+				<div class="avatar-load" ng-click="selectIcon()">
+					<span>Загрузить</span>
+				</div>
+				<div class="crop" ng-show="cropIcon">
+				    <canvas image-cropper width="600" height="400" id="canvas"
+				        image="cropper.sourceImage"
+				        cropped-image="icon"
+				        crop-width="120"
+				        crop-height="120"
+				        keep-aspect="true"
+				        touch-radius="30" 
+				        crop-area-bounds="bounds"></canvas>
+				    
+				    <input type="file" onchange="angular.element(this).scope().select()" id="icon" img-cropper-fileread image="cropper.sourceImage" hidden="true"/>
+				    <div class="close">
+				        <i class="material-icons" ng-click="cropIcon = false">close</i>
+				        <button type="button" class="save-img-user" ng-click="applyIcon()">Сохранить</button>
+				    </div>
+				</div>
 			</div>
 			<div class="personal-info">
 				<input type="text" class="user-name" placeholder="Введите имя" ng-model="user.name">
