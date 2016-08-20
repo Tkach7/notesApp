@@ -1,0 +1,134 @@
+.input-data {
+	display: flex;
+	width: 150px;
+	height: 40px;
+	border-radius: 2px;
+	border: solid 1px #a3b1cd;
+	align-items: center;
+	justify-content: space-around;
+
+}
+
+.input-data-item {
+	outline: none;
+	border: none;
+	height: 100%;
+	width: 130px;
+	padding: 5px;
+	font-size: 11px;
+	font-weight: 400;
+	color: #575757;
+}
+
+.cal-img {
+	cursor: pointer;
+}
+
+.small-calendar {
+	width: 307px;
+	display: inline-block;
+	border-radius: 2px;
+	background-color: #fff;
+	box-shadow: 0 2px 4px 0 rgba(128, 128, 128, 0.5);
+}
+
+.sm-cal-week {
+	text-align: center;
+	display: flex;
+	justify-content: space-between;
+	padding: 10px 20px;
+	margin: 0;
+	background-color: #9fb3d1;
+}
+
+.week-item {
+	width: 30px;
+	list-style-type: none;
+	font-size: 12px;
+	font-weight: 600;
+	color: #ffffff;
+}
+
+.sm-cal-switch-bar {
+	padding: 15px 30px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.small-calendar-panel {
+	text-align: center;
+	margin: 0;
+	padding: 0 20px 50px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.sm-cal-item {
+	padding: 15px 0;
+	list-style-type: none;
+	width: 35px;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.21;
+	color: #707070;
+}
+
+.month-data {
+	cursor: pointer;
+}
+
+.month-data.mute {
+	color: #9fb3d1;
+}
+
+.sm-cal-item.active {
+	background-color: #7989b4;
+	color: #ffffff;
+	border-radius: 20px;
+}
+
+.time-panel {
+	width: 307px;
+	border-radius: 2px;
+	background-color: #ffffff;
+	box-shadow: 0 2px 4px 0 rgba(128, 128, 128, 0.5);
+}
+
+.time-panel-caption {
+	height: 37px;
+	text-align: center;
+	padding: 10px 0;
+	background-color: #9fb3d1;
+	font-size: 12px;
+	font-weight: 600;
+	color: #ffffff;
+}
+
+.time-panel-area {
+	padding: 110px 94px 58px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.save-data {
+	border: none;
+	margin-top: 90px;
+	width: 120px;
+	height: 40px;
+	border-radius: 2px;
+	background-color: #696c9b;
+	font-size: 16px;
+	font-weight: 400;
+	color: #ffffff;
+}
+
+.save-data:hover {
+    background-color: #7a7db2;
+}
+
+.save-data:active {
+    background-color: #787a9e;
+}

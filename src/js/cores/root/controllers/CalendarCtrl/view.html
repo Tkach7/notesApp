@@ -28,10 +28,10 @@
 							&& $index < 6}"></span>
 						</div>
 						<div class="day-todo" ng-repeat="event in filtered = (day.events | limitTo: 2) track by $index" ng-class="{active: statusFullInfo}">
-							<div class="todo-title" ng-click="changeStatusFullInfo()">
+							<div class="todo-title" ng-click="changeStatusFullInfo(event)">
 								<span ng-bind="event.title"></span>
 							</div>
-							<div class="todo-time" ng-click="changeStatusFullInfo()">
+							<div class="todo-time" ng-click="changeStatusFullInfo(event)">
 								<span ng-bind="event.time | date: 'hh:mm' "></span>
 							</div>
 							<div class="full-info" ng-if="statusFullInfo">

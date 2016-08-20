@@ -7,6 +7,7 @@
 @import './components/main-calendar.css';
 @import './components/todo.css';
 @import './components/bootstrap.css';
+@import './components/small-calendar.css';
 
 @font-face {
 	font-family: 'proximaNova';

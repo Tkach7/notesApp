@@ -67,7 +67,6 @@ gulp.task('js', (callback) => {
 		.pipe(plumber())
 		.pipe(webpackStream(options))
 		.pipe(ngAnnotate())
-		.pipe(gulp.dest('./public/js'))
 		.on('data', function() {
 			if (!callback.called) {
 				callback.called = true;
@@ -99,6 +98,7 @@ gulp.task('css', function() {
             require('postcss-size'),
             require("postcss-colour-functions")
         ]))
+        .pipe(importCss())
         .pipe(gulp.dest('public/css'));
 });
 

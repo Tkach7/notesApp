@@ -118,12 +118,14 @@
 }
 
 .todo-title {
+	cursor: pointer;
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
 
 .todo-time {
+	cursor: pointer;
 	margin-left: 3px;
 }
 

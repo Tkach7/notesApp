@@ -1,0 +1,38 @@
+<div class="input-data">
+	<input type="text"  class="input-data-item">
+	<img src="./images/little-calendar.png" alt="calendar" class="cal-img" ng-click="showCalendar = true">
+</div>
+<div class="small-calendar" ng-if="showCalendar">
+	<ul class="sm-cal-week">
+		<li class="week-item">ПН</li>
+		<li class="week-item">ВТ</li>
+		<li class="week-item">СР</li>
+		<li class="week-item">ЧТ</li>
+		<li class="week-item">ПТ</li>
+		<li class="week-item">СБ</li>
+		<li class="week-item">ВС</li>
+	</ul>
+	<div class="sm-cal-switch-bar">
+		<img src="/images/arrow-left.png" class="previous-month" type="img" alt="left arrow" ng-click="getPrevMonth()">
+		<span class="data-info" ng-bind="month.title | normData"></span>
+		<img src="/images/arrow-right.png" class="next-month" type="img" alt="right arrow" ng-click="nextMonth()">
+	</div>
+	<ul class="small-calendar-panel">
+		<li class="sm-cal-item" ng-repeat="day in month.days track by $index" ng-class="{active: checkCurrentDay(day.value)}">
+			<span class="month-data" ng-bind="day.value | date: 'dd'" ng-class="{mute: day.mute}"></span>
+		</li>
+	</ul>
+</div>
+<div class="time-panel" ng-if="showTime">
+	<div class="time-panel-caption">
+		<span>Выберите время</span>
+	</div>
+	<div class="time-panel-area">
+		<div class="change-time">
+			<input type="text" class="change-time-item" ng-model="todoTime.hours">
+			<span class="colon">:</span>
+			<input type="text" class="change-time-item" ng-model="todoTime.minutes">
+		</div>
+		<button class="save-data" type="button">Сохранить</button>
+	</div>
+</div>

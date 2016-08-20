@@ -55,8 +55,10 @@ function controller($scope, Calendar, User, Data)  {
 	}
 	// Display full info
 	$scope.statusFullInfo = false;
-	$scope.changeStatusFullInfo = () => {
+	$scope.changeStatusFullInfo = (event) => {
 		$scope.statusFullInfo = !$scope.statusFullInfo;
+		$scope.todoTime.hours = moment(event.time).hours();
+		$scope.todoTime.minutes = moment(event.time).minutes();
 	}
 }
 

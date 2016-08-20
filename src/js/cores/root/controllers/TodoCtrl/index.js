@@ -8,7 +8,6 @@ function controller($scope, $timeout, User, Data) {
 		title: '',
 		time: moment().format()
 	}
-
 	$scope.changeStatus = () => {
 		Data.changeStatusTodo(User.todo).then((res) => {
 			}, (err) => {
@@ -50,4 +49,5 @@ function controller($scope, $timeout, User, Data) {
 			alert('Ooops! Look at console.');
 		});
 	};
+
 }
