@@ -1,17 +1,44 @@
 module.exports = function(app) {
-
-
-    //init directive styles;
-
-     // init directive constructor
+    // init directive constructor
     app.directive('smallCalendar', directive);
 
     function directive() {
         return {
             template: require('./view.html'),
             scope: {
+                time: '='
             },
             link: function (scope, element, attrs, Calendar) {
+                 // Show calendar panel
+                scope.showCalendar = false;
+                // Show time panel
+                scope.showTime = false;
+                // Get time
+                var timeInfo;
+                scope.getData = (data) => {
+                    timeInfo = data;
+                    scope.showCalendar = false;
+                    scope.showTime = true;
+                };
+                // Init time todo
+                scope.todoTime = {
+                    hours: '',
+                    minutes: ''
+                };
+                scope.saveTimeTodo = () => {
+                    timeInfo = moment(timeInfo).hours(scope.todoTime.hours).minutes(scope.todoTime.minutes);
+                    scope.time = timeInfo;
+                    scope.showTime = false;
+                };
+                // Valid time
+                scope.checkTime = () => {
+                    return scope.todoTime.hours >= 0
+                        && scope.todoTime.hours
+                        && scope.todoTime.minutes
+                        && scope.todoTime.hours < 24
+                        && scope.todoTime.minutes >= 0
+                        && scope.todoTime.minutes <= 60
+                }
 
             },
             controller: function ($scope, $element, $attrs, Calendar) {
@@ -31,10 +58,7 @@ module.exports = function(app) {
                     return moment(day).format('DD') === moment().format('DD')
                         && moment(day).format('MM') === moment().format('MM')
                 }
-                // Show calendar panel
-                $scope.showCalendar = false;
-                // Show time panel
-                $scope.showTime = false;
+               
             }           
         }
     };

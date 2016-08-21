@@ -1,6 +1,5 @@
 <article class="row">
     <div class="todo col-sm-12 col-md-6 col-lg-12">
-    <div small-calendar></div>
         <div class="new-todo">
             <div class="todo-caption">
                 <span>Дела</span>
@@ -8,10 +7,7 @@
             <div class="add-todo">
                 <div class="add-todo-item">
                     <input class="new-todo-inp" ng-model="todoModel.title" placeholder="Новое дело">
-                    <div class="add-todo-date">
-                        <span ng-bind="dateNewTodo"></span>
-                        <img src="./images/little-calendar.png" alt="calendar" class="calendar-img">
-                    </div>
+                    <div small-calendar time="todoModel.time"></div>
                 </div>
                 <button class="add-todo-btn" ng-click="addTodo()" ng-show="checkField()">Добавить</button>
             </div>
@@ -23,7 +19,7 @@
                     <span for="current-todo" class="todo-text" ng-bind="todo.title"></span>
                 </div>
                 <div class="current-todo-date">
-                    <span ng-bind="todo.time"></span>
+                    <span ng-bind="todo.time | normData:'todo'"></span>
                 </div>
             </div>     
         </div>

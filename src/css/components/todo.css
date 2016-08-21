@@ -47,11 +47,12 @@
 }
 
 .new-todo-inp {
-	padding: 0 170px 0 13px;
+	padding: 10px;
 	outline: none;
 	border-radius: 2px;
 	border: solid 1px #a3b1cd;
-	width: 615px;
+	border-right: none;
+	width: 465px;
 	height: 40px;
 	font-size: 16px;
 	font-weight: 400;
@@ -157,8 +158,8 @@
 }
 
 .new-todo-inp:focus {
-    color: #2a2b30;
-    border: solid 1px #749ae3;
+    // color: #2a2b30;
+    // border: solid 1px #749ae3;
 }
 
 .nothing-todo {

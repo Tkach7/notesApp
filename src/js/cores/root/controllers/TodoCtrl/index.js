@@ -6,7 +6,7 @@ function controller($scope, $timeout, User, Data) {
 	// Init empty todo model
 	$scope.todoModel = {
 		title: '',
-		time: moment().format()
+		time: ''
 	}
 	$scope.changeStatus = () => {
 		Data.changeStatusTodo(User.todo).then((res) => {
@@ -42,7 +42,7 @@ function controller($scope, $timeout, User, Data) {
 			// Reset todo model
 			$scope.todoModel = {
 				title: '',
-				time: moment().format()
+				time: ''
 			}
 		}, (err) => {
 			console.log(err);

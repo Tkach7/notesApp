@@ -20,7 +20,7 @@ const postcss = require('gulp-postcss');
 
 
 // @gulp:default
-gulp.task('default', ['js', 'vendors', 'css', 'html', 'watch'], () => {
+gulp.task('default', ['html'], () => {
 	server.listen({
 		path: 'server.js'
 	}, () => {
@@ -67,6 +67,7 @@ gulp.task('js', (callback) => {
 		.pipe(plumber())
 		.pipe(webpackStream(options))
 		.pipe(ngAnnotate())
+		.pipe(gulp.dest('./public/js'))
 		.on('data', function() {
 			if (!callback.called) {
 				callback.called = true;
@@ -98,12 +99,11 @@ gulp.task('css', function() {
             require('postcss-size'),
             require("postcss-colour-functions")
         ]))
-        .pipe(importCss())
         .pipe(gulp.dest('public/css'));
 });
 
 // @gulp:html
-gulp.task('html', () => {
+gulp.task('html', ['js', 'vendors', 'css', 'watch'], () => {
 	return gulp.src('src/index.html')
 		.pipe(gulp.dest('public'));
 });

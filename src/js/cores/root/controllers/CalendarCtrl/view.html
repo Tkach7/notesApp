@@ -4,7 +4,7 @@
 	</div>
 	<div class="switch-bar">
 		<img src="/images/arrow-left.png" class="previous-month" type="img" alt="left arrow" ng-click="getPrevMonth()">
-		<span class="data-info" ng-bind="month.title | normData"></span>
+		<span class="data-info" ng-bind="month.title | normData:'caption'"></span>
 		<img src="/images/arrow-right.png" class="next-month" type="img" alt="right arrow" ng-click="nextMonth()">
 	</div>
 	<section class="calendar-panel">
@@ -40,7 +40,7 @@
 								</div>
 								<div class="full-time">
 									<span ng-bind="event.time | date: 'dd'"></span>
-									<span ng-bind="event.time | normData"></span>
+									<span ng-bind="event.time | normData:'caption'"></span>
 								</div>
 								<div class="change-time">
 									<input type="text" class="change-time-item" ng-model="todoTime.hours">
