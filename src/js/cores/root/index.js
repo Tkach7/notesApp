@@ -1,7 +1,7 @@
 module.exports = function(settings, user) {
     moment.locale('ru');
     // Init Application
-    var app = angular.module('app', ['ngRoute', 'angular-img-cropper'])
+    var app = angular.module('app', ['ngRoute', 'angular-img-cropper', 'dndLists'])
         .constant('__settings', settings)
         .constant('__api', require('!json!../../../conf/rest.json'))
         .constant('__routing', require('!json!./routing.json'))

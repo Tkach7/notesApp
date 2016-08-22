@@ -8,7 +8,37 @@ module.exports = function(app) {
             scope: {
                 time: '='
             },
-            link: function (scope, element, attrs, Calendar) {
+            link: function (scope, element) {
+
+                // // init elements for bind scroll
+                // var hoursBox = element[0].children[1].children[1].children[0].children[0];
+                // var minutesBox = element[0].children[1].children[1].children[0].children[1];
+                // // var calendarBox = element[0].children[0].children[1].children[0];
+                // // define scroll handler listener
+                // var scrollListener = function(element, upMethod, downMethod) {
+
+                //     var handler = function(event) {
+                //         if (event.wheelDeltaY > 0) {
+                //             upMethod();
+                //         } else {
+                //             downMethod();
+                //         }
+
+                //         scope.$apply();
+                //     }
+
+                //     element.addEventListener('mousewheel', handler, false);
+
+                //     scope.$on('$destroy', function() {
+                //         $document.off('mousewheel', handler);
+                //     });
+                // }
+
+                // // init scroll handlers
+                // var hoursScroll = new scrollListener(hoursBox, scope.getNextHour, scope.getPrevHour);
+                // var minutesScroll = new scrollListener(minutesBox, scope.getNextMinute, scope.getPrevMinute);
+                // // var calendarScroll = new scrollListener(calendarBox, scope.getNextMonth, scope.getPrevMonth);
+
                  // Show calendar panel
                 scope.showCalendar = false;
                 // Show time panel

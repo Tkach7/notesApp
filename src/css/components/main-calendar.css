@@ -73,6 +73,7 @@
 }
 
 .month-item {
+	padding: 0 6px;
 	list-style-type: none;
 	width: 132px;
 	height: 120px;
@@ -84,6 +85,7 @@
 }
 
 .day-num {
+	display: block;
 	text-align: right;
 }
 
@@ -96,13 +98,17 @@
 }
 
 .day-todo {
-	width: 123px;
 	height: 22px;
 	border-radius: 3px;
 	background-color: #dadfe6;
+}
+
+.day-todo-item {
+	padding: 0 5px;
 	font-size: 11px;
 	font-weight: 400;
-	color: #000000;
+	color: #000;
+	height: 100%;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -126,7 +132,6 @@
 
 .todo-time {
 	cursor: pointer;
-	margin-left: 3px;
 }
 
 .show-more {
@@ -140,7 +145,7 @@
 	border: solid 1px #979797;
 	font-size: 11px;
 	font-weight: 400;
-	color: #000000;
+	color: #000;
 }
 
 .show-more-img {

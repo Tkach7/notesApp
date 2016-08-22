@@ -46,7 +46,12 @@ function controller($scope, Calendar, User, Data)  {
 		todo.time = moment(todo.time).hour($scope.todoTime.hours).minute($scope.todoTime.minutes).format();
 		Data.changeTimeTodo(todo).then((res) => {
 			// Push responced todo to User.todo array
-			User.todo[index] = todo;
+			User.todo.forEach((elem) => {
+				if (elem.title === item.title) {
+					elem.time = time;
+					return;
+				}
+			});
 			// Reset todo model
 			}, (err) => {
 				console.log(err);
@@ -59,6 +64,25 @@ function controller($scope, Calendar, User, Data)  {
 		$scope.statusFullInfo = !$scope.statusFullInfo;
 		$scope.todoTime.hours = moment(event.time).hours();
 		$scope.todoTime.minutes = moment(event.time).minutes();
+	}
+	$scope.movedDragElem = (event, item) => {
+		let day = event.toElement.innerText
+		let time = moment(item.time).date(day).format();
+		item.time = time;
+		Data.changeTimeTodo(item).then((res) => {
+			User.todo.forEach((elem) => {
+				if (elem.title === item.title) {
+					elem.time = time;
+					return;
+				}
+			});
+
+		}, (err) => {
+			console.log(err);
+			alert('Ooops! Look at console.');
+		});
+
+		return item;
 	}
 }
 
