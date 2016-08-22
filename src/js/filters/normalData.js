@@ -15,11 +15,14 @@ module.exports = angular.module('app').filter('normData', function () {
 				'Июнь': 'Июня',
 				'Июль': 'Июля',
 				'Август': 'Августа',
+				'Сентябрь': 'Сентября',
 				'Октябрь': 'Октября',
 				'Ноябрь': 'Ноября',
 				'Декабрь': 'Декабря'
 			}
 			return day + ' ' + months[month] + ' ' + year;
 		}
+		if (format === 'month') 
+			return moment(item).month() < 10 ? '0' + moment(item).month() : moment(item).month();
   	};
 });

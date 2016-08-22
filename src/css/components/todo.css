@@ -1,5 +1,5 @@
 .todo {
-	max-height: 700px;
+	// max-height: 700px;
 	overflow: scroll;
 	opacity: 0.95;
 	border-radius: 2px;
@@ -25,7 +25,6 @@
 
 .add-todo-item {
 	display: flex;
-	position: relative;
 }
 
 .calendar-img {

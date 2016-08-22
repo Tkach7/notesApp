@@ -6,10 +6,10 @@ module.exports = function(app) {
         return {
             template: require('./view.html'),
             scope: {
-                time: '='
+                time: '=',
+                options: '=?'
             },
             link: function (scope, element) {
-
                 // // init elements for bind scroll
                 // var hoursBox = element[0].children[1].children[1].children[0].children[0];
                 // var minutesBox = element[0].children[1].children[1].children[0].children[1];
@@ -46,9 +46,13 @@ module.exports = function(app) {
                 // Get time
                 var timeInfo;
                 scope.getData = (data) => {
-                    timeInfo = data;
                     scope.showCalendar = false;
-                    scope.showTime = true;
+                    if (scope.options.controller === 'todo') {
+                        timeInfo = data;
+                        scope.showTime = true;
+                    } else {
+                        scope.time = data;
+                    }
                 };
                 // Init time todo
                 scope.todoTime = {

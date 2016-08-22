@@ -1,5 +1,5 @@
-<div class="input-data">
-	<div type="text"  class="input-data-item" ng-bind="time | normData:'todo'"></div>
+<div class="input-data" ng-class="{todonow: options.controller === 'todo', profilenow: options.controller === 'profile'}">
+	<div type="text"  class="input-data-item" ng-bind="time | normData:'todo'" ng-class="{profilenow: options.controller === 'profile'}"></div>
 	<img src="./images/little-calendar.png" alt="calendar" class="cal-img" ng-click="showCalendar = !showCalendar">
 </div>
 <div class="small-calendar" ng-if="showCalendar">

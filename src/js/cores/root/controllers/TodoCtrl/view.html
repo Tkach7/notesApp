@@ -7,7 +7,7 @@
             <div class="add-todo">
                 <div class="add-todo-item">
                     <input class="new-todo-inp" ng-model="todoModel.title" placeholder="Новое дело">
-                    <div small-calendar time="todoModel.time"></div>
+                    <div small-calendar time="todoModel.time" options="options"></div>
                 </div>
                 <button class="add-todo-btn" ng-click="addTodo()" ng-show="checkField()">Добавить</button>
             </div>

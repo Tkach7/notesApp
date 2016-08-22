@@ -6,8 +6,9 @@ function controller($scope, Calendar, User, Data)  {
 	// Load calendar
     $scope.month = Calendar.getMonth(0);
     // Load events in calendar
-	(function() {
+	function reloadEvents() {
 		User.todo.forEach((todo) => {
+			todo.show = false;
 			$scope.month.days.forEach((day) => {
 				if (day.value <= todo.time
 					&& todo.time <= moment(day.value).endOf('day').format()
@@ -16,16 +17,19 @@ function controller($scope, Calendar, User, Data)  {
 				}
 			})
 		})
-	})();
+	};
+	reloadEvents();
 	// Month counter
 	$scope.counterMonth = 0;
 	// Move to previous month
 	$scope.getPrevMonth = () => {
 		$scope.month = Calendar.getMonth(--$scope.counterMonth);
+		reloadEvents();
 	};
 	// Move to next month
 	$scope.nextMonth = () => {
-		$scope.month = Calendar.getMonth(++$scope.counterMonth);		
+		$scope.month = Calendar.getMonth(++$scope.counterMonth);
+		reloadEvents();	
 	}
 	//  Todo timer
 	$scope.todoTime = {
@@ -47,8 +51,8 @@ function controller($scope, Calendar, User, Data)  {
 		Data.changeTimeTodo(todo).then((res) => {
 			// Push responced todo to User.todo array
 			User.todo.forEach((elem) => {
-				if (elem.title === item.title) {
-					elem.time = time;
+				if (elem.title === todo.title) {
+					elem.time = todo.time;
 					return;
 				}
 			});
@@ -61,13 +65,14 @@ function controller($scope, Calendar, User, Data)  {
 	// Display full info
 	$scope.statusFullInfo = false;
 	$scope.changeStatusFullInfo = (event) => {
-		$scope.statusFullInfo = !$scope.statusFullInfo;
+		event.show = !event.show;
 		$scope.todoTime.hours = moment(event.time).hours();
 		$scope.todoTime.minutes = moment(event.time).minutes();
 	}
 	$scope.movedDragElem = (event, item) => {
-		let day = event.toElement.innerText
-		let time = moment(item.time).date(day).format();
+		let month = event.toElement.innerText.slice(3,5);
+		let day = event.toElement.innerText.slice(0,2);
+		let time = moment(item.time).month(month).date(day).format();
 		item.time = time;
 		Data.changeTimeTodo(item).then((res) => {
 			User.todo.forEach((elem) => {

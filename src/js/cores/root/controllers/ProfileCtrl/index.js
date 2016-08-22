@@ -4,6 +4,10 @@ import api from '../../../../../conf/rest.json';
 module.exports = angular.module('app').controller('ProfileCtrl', controller);
 
 function controller($scope, User, Data, $window) {
+	// Ctrt options
+	$scope.options = {
+		controller: 'profile'
+	}
 	// Init User
 	$scope.user = User;
 	$scope.icon = User.icon;

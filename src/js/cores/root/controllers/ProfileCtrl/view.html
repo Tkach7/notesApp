@@ -28,10 +28,7 @@
 			</div>
 			<div class="personal-info">
 				<input type="text" class="user-name" placeholder="Введите имя" ng-model="user.name">
-				<div class="date-settings">
-					<input type="text" class="user-birthday" placeholder="Введите дату рождения" ng-model="user.birthday">
-					<img src="./images/little-calendar.png" class="calendaer-icon" alt="calendar">
-				</div>
+				<div small-calendar time="user.birthday" options="options"></div>
 				<button class="save-info" ng-click="saveDate()" ng-show="checkField()">Сохранить</button>
 			</div>
 		</div>

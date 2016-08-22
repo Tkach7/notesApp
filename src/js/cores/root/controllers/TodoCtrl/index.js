@@ -1,6 +1,10 @@
 module.exports = angular.module('app').controller('TodoCtrl', controller);
 
 function controller($scope, $timeout, User, Data) {
+	// Ctrt options
+	$scope.options = {
+		controller: 'todo'
+	}
 	// Init user model
 	$scope.user = User;
 	// Init empty todo model
@@ -49,5 +53,4 @@ function controller($scope, $timeout, User, Data) {
 			alert('Ooops! Look at console.');
 		});
 	};
-
 }

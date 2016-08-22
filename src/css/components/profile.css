@@ -1,5 +1,4 @@
 .profile {
-	max-height: 700px;
 	overflow: scroll;
 	opacity: 0.95;
   	border-radius: 2px;
@@ -54,6 +53,7 @@
 }
 
 .date-settings {
+	display: flex;
 	position: relative;
 	margin-top: 11px;
 	width: 322px;
@@ -81,7 +81,7 @@
 }
 
 .save-info {
-	margin-top: 35px;
+	margin-top: 65px;
 	width: 322px;
 	height: 40px;
 	border-radius: 2px;

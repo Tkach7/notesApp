@@ -1,18 +1,33 @@
 [small-calendar] {
 	position: absolute;
-	// right: 7px;
+	// top: 0;
 }
 
 .input-data {
 	border: solid 1px #a3b1cd;
-	width: 130px;
 	padding: 0 10px;
 	display: flex;
 	height: 40px;
 	border-radius: 2px;
-	border-left: none;
 	align-items: center;
+}
 
+.input-data.todonow {
+	border-left: none;
+	width: 140px;
+}
+
+.input-data-item.profilenow {
+	font-size: 16px;
+	font-weight: 400;
+	color: #566495;
+	width: 200px;
+}
+
+.input-data.profilenow {
+	margin-top: 7px;
+	justify-content: space-between;
+	width: 322px;
 }
 
 .input-data-item {

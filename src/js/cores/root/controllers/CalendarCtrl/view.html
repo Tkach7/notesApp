@@ -21,16 +21,17 @@
 		</div>
 		<div class="month-panel">
 			<ul class="month">
-				<li class="month-item" ng-repeat="day in month.days track by $index" ng-class="{mute: day.mute}" dnd-list="day.events" dnd-drop="movedDragElem(event, item)">
+				<li class="month-item" ng-repeat="day in month.days track by $index" ng-class="{mute: day.mute}" dnd-list="day.events" dnd-drop="movedDragElem(event, item)" dnd-allowed-types="day.mute">
 					<span class="day-num" ng-bind="day.value | date: 'dd'" ng-class="{notactive: day.mute 
 					&& $index < 6}"></span>
-					<div class="day-todo" ng-repeat="event in filtered = (day.events | limitTo: 2) track by $index"  ng-class="{active: statusFullInfo}" dnd-draggable="event" dnd-moved="day.events.splice($index, 1)">
+					<span class="num-month" ng-bind="day.value | normData:'month'"></span>
+					<div class="day-todo" ng-repeat="event in filtered = (day.events | limitTo: 2) track by $index"  ng-class="{active: event.show ,mute: day.mute}" dnd-draggable="event" dnd-moved="day.events.splice($index, 1)">
 						<span class="day-todo-item" ng-click="changeStatusFullInfo(event)" >
 							<span class="todo-title" ng-bind="event.title"></span>
-							<span class="todo-time" ng-bind="event.time | date: 'hh:mm'"></span>
+							<span class="todo-time" ng-bind="event.time | date: 'HH:mm'"></span>
 						</span>
 
-						<div class="full-info" ng-if="statusFullInfo">
+						<div class="full-info" ng-if="event.show">
 							<div class="full-title">
 								<span ng-bind="event.title"></span>
 							</div>
@@ -43,7 +44,7 @@
 								<span class="colon">:</span>
 								<input type="text" class="change-time-item" ng-model="todoTime.minutes">
 							</div>
-							<button type="button" class="save-time" ng-click="saveTime(event);changeStatusFullInfo()" ng-show="checkTime()">
+							<button type="button" class="save-time" ng-click="saveTime(event);changeStatusFullInfo(event)" ng-show="checkTime()">
 								Сохранить
 							</button>
 						</div>
