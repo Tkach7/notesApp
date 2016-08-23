@@ -25,7 +25,7 @@
 					<span class="day-num" ng-bind="day.value | date: 'dd'" ng-class="{notactive: day.mute 
 					&& $index < 6}"></span>
 					<span class="num-month" ng-bind="day.value | normData:'month'"></span>
-					<div class="day-todo" ng-repeat="event in filtered = (day.events | limitTo: 2) track by $index"  ng-class="{active: event.show ,mute: day.mute}" dnd-draggable="event" dnd-moved="day.events.splice($index, 1)">
+					<div class="day-todo" ng-repeat="event in filtered = (day.events | limitTo: limit) track by $index"  ng-class="{active: event.show ,mute: day.mute}" dnd-draggable="event" dnd-moved="day.events.splice($index, 1)">
 						<span class="day-todo-item" ng-click="changeStatusFullInfo(event)" >
 							<span class="todo-title" ng-bind="event.title"></span>
 							<span class="todo-time" ng-bind="event.time | date: 'HH:mm'"></span>
@@ -49,8 +49,8 @@
 							</button>
 						</div>
 					</div>
-					<div class="show-more" ng-if="day.events.length > 2">
-						<span>Еще задачи</span>
+					<div class="show-more" ng-if="day.events.length > 2" ng-click="limit = limit + 2">
+						<span>Еще задачи {{limit}}</span>
 						<img src="./images/else.png" alt="show more" class="show-more-img">
 					</div>
 				</li>

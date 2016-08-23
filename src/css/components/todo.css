@@ -1,5 +1,5 @@
 .todo {
-	// max-height: 700px;
+	max-height: 700px;
 	overflow: scroll;
 	opacity: 0.95;
 	border-radius: 2px;
@@ -60,7 +60,7 @@
 
 .add-todo-btn {
 	outline: none;
-	margin-left: 142px;
+	margin-left: 22px;
 	width: 116px;
 	height: 40px;
 	border-radius: 2px;

@@ -18,6 +18,7 @@ function controller($scope, Calendar, User, Data)  {
 			})
 		})
 	};
+	$scope.limit = 2;
 	reloadEvents();
 	// Month counter
 	$scope.counterMonth = 0;
@@ -70,9 +71,12 @@ function controller($scope, Calendar, User, Data)  {
 		$scope.todoTime.minutes = moment(event.time).minutes();
 	}
 	$scope.movedDragElem = (event, item) => {
+		console.log(event);
+		if (event.toElement.className === 'day-todo-item') return;
 		let month = event.toElement.innerText.slice(3,5);
 		let day = event.toElement.innerText.slice(0,2);
 		let time = moment(item.time).month(month).date(day).format();
+
 		item.time = time;
 		Data.changeTimeTodo(item).then((res) => {
 			User.todo.forEach((elem) => {

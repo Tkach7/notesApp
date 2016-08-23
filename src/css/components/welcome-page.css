@@ -1,13 +1,12 @@
 .enter {
-	margin-top: 50%;
     width: 236px;
     height: 60px;
-    background-color: #ffffff;
+    background-color: #fff;
 }
 
 .enter a {
     font-size: 21px;
     font-weight: 400;
-    color: #000000;
+    color: #000;
     text-decoration: none;
 }

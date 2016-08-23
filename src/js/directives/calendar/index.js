@@ -9,37 +9,31 @@ module.exports = function(app) {
                 time: '=',
                 options: '=?'
             },
-            link: function (scope, element) {
-                // // init elements for bind scroll
-                // var hoursBox = element[0].children[1].children[1].children[0].children[0];
-                // var minutesBox = element[0].children[1].children[1].children[0].children[1];
-                // // var calendarBox = element[0].children[0].children[1].children[0];
-                // // define scroll handler listener
-                // var scrollListener = function(element, upMethod, downMethod) {
+            link: function (scope, element, $document) {
+                // init elements for bind scroll
+                var hoursBox = element[0].children[1].children[1].children[0].children[0];
+                var minutesBox = element[0].children[1].children[1].children[0].children[2];
+                // var calendarBox = element[0].children[0].children[1].children[0];
+                // define scroll handler listener
+                var scrollListener = function(element, upMethod, downMethod) {
 
-                //     var handler = function(event) {
-                //         if (event.wheelDeltaY > 0) {
-                //             upMethod();
-                //         } else {
-                //             downMethod();
-                //         }
+                    var handler = function(event) {
+                        if (event.wheelDeltaY > 0) {
+                            downMethod();
+                        } else {
+                            upMethod();
+                        }
 
-                //         scope.$apply();
-                //     }
+                        scope.$apply();
+                    }
 
-                //     element.addEventListener('mousewheel', handler, false);
+                    element.addEventListener('mousewheel', handler, false);
 
-                //     scope.$on('$destroy', function() {
-                //         $document.off('mousewheel', handler);
-                //     });
-                // }
-
-                // // init scroll handlers
-                // var hoursScroll = new scrollListener(hoursBox, scope.getNextHour, scope.getPrevHour);
-                // var minutesScroll = new scrollListener(minutesBox, scope.getNextMinute, scope.getPrevMinute);
-                // // var calendarScroll = new scrollListener(calendarBox, scope.getNextMonth, scope.getPrevMonth);
-
-                 // Show calendar panel
+                    // scope.$on('$destroy', function() {
+                    //     $document.off('mousewheel', handler);
+                    // });
+                }
+                // Show calendar panel
                 scope.showCalendar = false;
                 // Show time panel
                 scope.showTime = false;
@@ -48,6 +42,10 @@ module.exports = function(app) {
                 scope.getData = (data) => {
                     scope.showCalendar = false;
                     if (scope.options.controller === 'todo') {
+                        scope.todoTime = {
+                            hours: 0,
+                            minutes: 0
+                        };
                         timeInfo = data;
                         scope.showTime = true;
                     } else {
@@ -73,6 +71,26 @@ module.exports = function(app) {
                         && scope.todoTime.minutes >= 0
                         && scope.todoTime.minutes <= 60
                 }
+                // Next hour
+                scope.nextHour = () => {
+                    scope.todoTime.hours < 23 ? scope.todoTime.hours++ : 23;
+                };
+                // Prev hour
+                scope.prevHour = () => {
+                    scope.todoTime.hours > 0 ? scope.todoTime.hours-- : 0;
+                };
+                // Next minute
+                scope.nextMinute = () => {
+                    scope.todoTime.minutes < 60 ? scope.todoTime.minutes++ : 59;
+                };
+                // Prev minute
+                scope.prevMinute = () => {
+                    scope.todoTime.minutes > 0 ? scope.todoTime.minutes-- : 0;
+                };
+                // init scroll handlers
+                var hoursScroll = new scrollListener(hoursBox, scope.nextHour, scope.prevHour);
+                var minutesScroll = new scrollListener(minutesBox, scope.nextMinute,  scope.prevMinute);
+                // var calendarScroll = new scrollListener(calendarBox, scope.getNextMonth, scope.getPrevMonth);
 
             },
             controller: function ($scope, $element, $attrs, Calendar) {

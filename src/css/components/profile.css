@@ -1,4 +1,5 @@
 .profile {
+	max-height: 700px;
 	overflow: scroll;
 	opacity: 0.95;
   	border-radius: 2px;
