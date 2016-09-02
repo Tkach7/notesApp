@@ -1,10 +1,19 @@
+.profile-margin {
+	margin-top: 45px;
+}
+
 .profile {
 	max-height: 700px;
 	overflow: scroll;
 	opacity: 0.95;
   	border-radius: 2px;
-  	background-color: #ffffff;
+  	background-color: #fff;
 }
+
+.test {
+	border: 3px solid red;
+}
+
 
 .user-info {
 	padding: 50px 304px;

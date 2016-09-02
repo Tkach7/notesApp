@@ -1,60 +1,64 @@
-<article class="calendar">
-	<div class="calenadr-caption">
-		<span>Календарь</span>
-	</div>
-	<div class="switch-bar">
-		<img src="/images/arrow-left.png" class="previous-month" type="img" alt="left arrow" ng-click="getPrevMonth()">
-		<span class="data-info" ng-bind="month.title | normData:'caption'"></span>
-		<img src="/images/arrow-right.png" class="next-month" type="img" alt="right arrow" ng-click="nextMonth()">
-	</div>
-	<section class="calendar-panel">
-		<div class="week-panel">
-			<ul class="week">
-				<li class="weekday">ПН</li>
-				<li class="weekday">ВТ</li>
-				<li class="weekday">СР</li>
-				<li class="weekday">ЧТ</li>
-				<li class="weekday">ПТ</li>
-				<li class="weekday">СБ</li>
-				<li class="weekday">ВС</li>
-			</ul>
-		</div>
-		<div class="month-panel">
-			<ul class="month">
-				<li class="month-item" ng-repeat="day in month.days track by $index" ng-class="{mute: day.mute}" dnd-list="day.events" dnd-drop="movedDragElem(event, item)" dnd-allowed-types="day.mute">
-					<span class="day-num" ng-bind="day.value | date: 'dd'" ng-class="{notactive: day.mute 
-					&& $index < 6}"></span>
-					<span class="num-month" ng-bind="day.value | normData:'month'"></span>
-					<div class="day-todo" ng-repeat="event in filtered = (day.events | limitTo: limit) track by $index"  ng-class="{active: event.show ,mute: day.mute}" dnd-draggable="event" dnd-moved="day.events.splice($index, 1)">
-						<span class="day-todo-item" ng-click="changeStatusFullInfo(event)" >
-							<span class="todo-title" ng-bind="event.title"></span>
-							<span class="todo-time" ng-bind="event.time | date: 'HH:mm'"></span>
-						</span>
+<article class="row flex-center martgin-content">
+	<section class="col-md-9 col-xs-9 col-lg-9">
+		<div class="calendar">
+			<div class="calenadr-caption">
+				<span>Календарь</span>
+			</div>
+			<div class="switch-bar">
+				<img src="/images/arrow-left.png" class="previous-month" type="img" alt="left arrow" ng-click="getPrevMonth()">
+				<span class="data-info" ng-bind="month.title | normData:'caption'"></span>
+				<img src="/images/arrow-right.png" class="next-month" type="img" alt="right arrow" ng-click="nextMonth()">
+			</div>
+			<section class="calendar-panel">
+				<div class="week-panel">
+					<ul class="week">
+						<li class="weekday">ПН</li>
+						<li class="weekday">ВТ</li>
+						<li class="weekday">СР</li>
+						<li class="weekday">ЧТ</li>
+						<li class="weekday">ПТ</li>
+						<li class="weekday">СБ</li>
+						<li class="weekday">ВС</li>
+					</ul>
+				</div>
+				<div class="month-panel">
+					<ul class="month">
+						<li class="month-item" ng-repeat="day in month.days track by $index" ng-class="{mute: day.mute}" dnd-list="day.events" dnd-drop="movedDragElem(event, item)" dnd-allowed-types="day.mute">
+							<span class="day-num" ng-bind="day.value | date: 'dd'" ng-class="{notactive: day.mute 
+							&& $index < 6}"></span>
+							<span class="num-month" ng-bind="day.value | normData:'month'"></span>
+							<div class="day-todo" ng-repeat="event in filtered = (day.events | limitTo: limit) track by $index"  ng-class="{active: event.show ,mute: day.mute}" dnd-draggable="event" dnd-moved="day.events.splice($index, 1)">
+								<span class="day-todo-item" ng-click="changeStatusFullInfo(event)" >
+									<span class="todo-title" ng-bind="event.title"></span>
+									<span class="todo-time" ng-bind="event.time | date: 'HH:mm'"></span>
+								</span>
 
-						<div class="full-info" ng-if="event.show">
-							<div class="full-title">
-								<span ng-bind="event.title"></span>
+								<div class="full-info" ng-if="event.show">
+									<div class="full-title">
+										<span ng-bind="event.title"></span>
+									</div>
+									<div class="full-time">
+										<span ng-bind="event.time | date: 'dd'"></span>
+										<span ng-bind="event.time | normData:'caption'"></span>
+									</div>
+									<div class="change-time">
+										<input type="text" class="change-time-item" ng-model="todoTime.hours">
+										<span class="colon">:</span>
+										<input type="text" class="change-time-item" ng-model="todoTime.minutes">
+									</div>
+									<button type="button" class="save-time" ng-click="saveTime(event);changeStatusFullInfo(event)" ng-show="checkTime()">
+										Сохранить
+									</button>
+								</div>
 							</div>
-							<div class="full-time">
-								<span ng-bind="event.time | date: 'dd'"></span>
-								<span ng-bind="event.time | normData:'caption'"></span>
+							<div class="show-more" ng-if="day.events.length > 2" ng-click="limit = limit + 2">
+								<span>Еще задачи {{limit}}</span>
+								<img src="./images/else.png" alt="show more" class="show-more-img">
 							</div>
-							<div class="change-time">
-								<input type="text" class="change-time-item" ng-model="todoTime.hours">
-								<span class="colon">:</span>
-								<input type="text" class="change-time-item" ng-model="todoTime.minutes">
-							</div>
-							<button type="button" class="save-time" ng-click="saveTime(event);changeStatusFullInfo(event)" ng-show="checkTime()">
-								Сохранить
-							</button>
-						</div>
-					</div>
-					<div class="show-more" ng-if="day.events.length > 2" ng-click="limit = limit + 2">
-						<span>Еще задачи {{limit}}</span>
-						<img src="./images/else.png" alt="show more" class="show-more-img">
-					</div>
-				</li>
-			</ul>
+						</li>
+					</ul>
+				</div>
+			</section>
 		</div>
 	</section>
 </article>

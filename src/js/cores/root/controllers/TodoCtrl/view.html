@@ -1,42 +1,44 @@
-<article class="row">
-    <div class="todo col-sm-12 col-md-6 col-lg-12">
-        <div class="new-todo">
-            <div class="todo-caption">
-                <span>Дела</span>
-            </div>
-            <div class="add-todo">
-                <div class="add-todo-item">
-                    <input class="new-todo-inp" ng-model="todoModel.title" placeholder="Новое дело">
-                    <div small-calendar time="todoModel.time" options="options"></div>
+<article class="row flex-center margin-content">
+    <section class="col-md-9 col-xs-9 col-lg-9">
+        <div class="todo">
+            <div class="new-todo">
+                <div class="todo-caption">
+                    <span>Дела</span>
                 </div>
-                <button class="add-todo-btn" ng-click="addTodo()" ng-show="checkField()">Добавить</button>
-            </div>
-        </div>
-        <div class="current-todo" ng-show="checkStatusTodo(false)">
-            <div class="current-todo-item" ng-repeat="todo in user.todo track by $index" ng-if="!todo.status">
-                <div class="current-todo-inp">
-                    <input type="checkbox" ng-model="todo.status" ng-change="changeStatus()">
-                    <span for="current-todo" class="todo-text" ng-bind="todo.title"></span>
-                </div>
-                <div class="current-todo-date">
-                    <span ng-bind="todo.time | normData:'todo'"></span>
-                </div>
-            </div>     
-        </div>
-        <div class="nothing-todo" ng-show="!checkStatusTodo(false)">
-            <span>Молодец! Ты выполнил все тудухи! Можешь наконец-то выйти на улицу!</span>
-        </div>
-        <div class="finish-todo" ng-show="checkStatusTodo(true)">
-            <div class="finish-todo-item" ng-repeat="todo in user.todo track by $index" ng-if="todo.status">
-                <div class="finish-todo-inp">
-                    <input type="checkbox" ng-model="todo.status" ng-change="changeStatus()">
-                    <span for="finish-todo" class="todo-text" ng-bind="todo.title"></span>
-                </div>
-                <div class="finish-todo-tools">
-                    <img src="./images/delete.png" alt="delete todo" class="delete-todo-img">
-                    <button class="delete-todo" ng-click="deleteTodo($index, todo)">Удалить</button>
+                <div class="add-todo">
+                    <div class="add-todo-item">
+                        <input class="new-todo-inp" ng-model="todoModel.title" placeholder="Новое дело">
+                        <div small-calendar time="todoModel.time" options="options"></div>
+                    </div>
+                    <button class="add-todo-btn" ng-click="addTodo()" ng-show="checkField()">Добавить</button>
                 </div>
             </div>
+            <div class="current-todo" ng-show="checkStatusTodo(false)">
+                <div class="current-todo-item" ng-repeat="todo in user.todo track by $index" ng-if="!todo.status">
+                    <div class="current-todo-inp">
+                        <input type="checkbox" ng-model="todo.status" ng-change="changeStatus()">
+                        <span for="current-todo" class="todo-text" ng-bind="todo.title"></span>
+                    </div>
+                    <div class="current-todo-date">
+                        <span ng-bind="todo.time | normData:'todo'"></span>
+                    </div>
+                </div>     
+            </div>
+            <div class="nothing-todo" ng-show="!checkStatusTodo(false)">
+                <span>Молодец! Ты выполнил все тудухи! Можешь наконец-то выйти на улицу!</span>
+            </div>
+            <div class="finish-todo" ng-show="checkStatusTodo(true)">
+                <div class="finish-todo-item" ng-repeat="todo in user.todo track by $index" ng-if="todo.status">
+                    <div class="finish-todo-inp">
+                        <input type="checkbox" ng-model="todo.status" ng-change="changeStatus()">
+                        <span for="finish-todo" class="todo-text" ng-bind="todo.title"></span>
+                    </div>
+                    <div class="finish-todo-tools">
+                        <img src="./images/delete.png" alt="delete todo" class="delete-todo-img">
+                        <button class="delete-todo" ng-click="deleteTodo($index, todo)">Удалить</button>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
 </article>

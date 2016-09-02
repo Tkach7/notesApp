@@ -1,18 +1,16 @@
-.nav-block {
-    height: 380px;
-    padding: 0 7px;
+.nav-margin {
+    margin-top: 95px;
 }
 
 .nav__item {
+    padding: 85px 0;
     position: relative;
-    height: 100%;
     opacity: 0.95;
     border-radius: 2px;
     background-color: #fff;
     display: flex;
-    padding: 0 96px;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
 }
 
 .nav__item__img {
@@ -29,7 +27,7 @@
 .nav__text {
     font-size: 21px;
     font-weight: 400;
-    color: #000000;
+    color: #000;
 }
 
 .nav__link {

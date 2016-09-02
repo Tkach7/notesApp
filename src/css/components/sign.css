@@ -1,8 +1,9 @@
 .sign {
-    width: 502px;
+    margin-top: 150px;
+    width: 100%;
     opacity: 0.95;
     border-radius: 2px;
-    background-color: #ffffff;
+    background-color: #fff;
     padding: 60px 90px 82px;
     box-sizing: border-box;
 }
@@ -41,7 +42,6 @@
 
 .sign-enter {
     margin-top: 40px;
-    width: 322px;
     height: 40px;
     border-radius: 2px;
     background-color: #696c9b;

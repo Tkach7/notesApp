@@ -1,15 +1,17 @@
-.back-out {
-	// margin-bottom: 40px;
+.test {
+	border: 3px solid red;
 }
-.back {
-	width: 465px;
+
+.backout {
+	margin-top: 40px;
+	display: flex;
+	justify-content: center;
 }
 
 .back-link {
+	display: inline;
 	cursor: pointer;
 	position: relative;
-	width: 25px;
-	
 }
 
 .back-img {
@@ -25,22 +27,16 @@
 	height: 100%;
 }
 
-.logout {
-	position: relative;
-	width: 465px;
-	display: flex;
-	justify-content: flex-end;
-}
-
 .logout-link {
+	float: right;
 	cursor: pointer;
 	display: flex;
+	width: 77px;
 }
 
 .logout-text {
-	align-items: center;
 	margin-left: 13px;
 	font-size: 16px;
   	font-weight: 400;
-  	color: #ffffff;
+  	color: #fff;
 }

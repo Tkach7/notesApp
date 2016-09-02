@@ -1,5 +1,5 @@
-<article class="row">
-	<div class="col-md-4 nav-block" ng-repeat="item in navList">
+<article class="row flex-center nav-margin">
+	<section class="col-md-3 col-lg-3 col-xs-3" ng-repeat="item in navList">
 		<div class="nav__item">
 			<a href="{{item.src}}" class="nav__link"></a>
 			<img ng-src="{{item.img}}" alt="{{item.name}}" class="nav__item__img">
@@ -7,5 +7,5 @@
 				<span class="nav__text">{{item.name}}</span>
 			</div>
 		</div>
-	</div>		
+	</section>		
 </article>

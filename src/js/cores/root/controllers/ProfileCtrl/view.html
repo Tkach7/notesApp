@@ -1,48 +1,49 @@
-<article class="row">
-	<div class="profile col-sm-12 col-md-6 col-lg-12">
-		<div class="user-info">
-			<div class="user-info__header">
-				<span>Настройки профиля</span>
-			</div>
-			<div class="profile-avatar">
-				<img ng-src="{{ getSrcIcon(icon) }}" alt="user avatar" class="avatar-img" ng-click="selectIcon()">
-				<div class="avatar-load" ng-click="selectIcon()">
-					<span>Загрузить</span>
+<article class="row flex-center margin-content">
+	<section class="col-md-9 col-xs-9 col-lg-9">
+		<div class="profile">
+			<div class="user-info">
+				<div class="user-info__header">
+					<span>Настройки профиля</span>
 				</div>
-				<div class="crop" ng-show="cropIcon">
-				    <canvas image-cropper width="600" height="400" id="canvas"
-				        image="cropper.sourceImage"
-				        cropped-image="icon"
-				        crop-width="120"
-				        crop-height="120"
-				        keep-aspect="true"
-				        touch-radius="30" 
-				        crop-area-bounds="bounds"></canvas>
-				    
-				    <input type="file" onchange="angular.element(this).scope().select()" id="icon" img-cropper-fileread image="cropper.sourceImage" hidden="true"/>
-				    <div class="close">
-				        <i class="material-icons" ng-click="cropIcon = false">close</i>
-				        <button type="button" class="save-img-user" ng-click="applyIcon()">Сохранить</button>
-				    </div>
-				</div>
-			</div>
-			<div class="personal-info">
-				<input type="text" class="user-name" placeholder="Введите имя" ng-model="user.name">
-				<div small-calendar time="user.birthday" options="options"></div>
-				<button class="save-info" ng-click="saveDate()" ng-show="checkField()">Сохранить</button>
-			</div>
-		</div>
-		<div class="user-sessions">
-				<div class="user-sessions__header">
-					<span>Ваши сессии</span>
-				</div>
-				<div class="user-sessions__item" ng-repeat="session in user.sessions track by $index">
-					<span class="sessions-text" ng-bind="getSessionsInfo(session)" ng-class="{current: checkCurrentSession(session)}"></span>
-					<div class="terminated-ses" ng-click="deleteSession($index, session)">
-						<img src="./images/terminate.png" alt="terminated">
-						<button class="delete-session">Terminated</button>
+				<div class="profile-avatar">
+					<img ng-src="{{ getSrcIcon(icon) }}" alt="user avatar" class="avatar-img" ng-click="selectIcon()">
+					<div class="avatar-load" ng-click="selectIcon()">
+						<span>Загрузить</span>
+					</div>
+					<div class="crop" ng-show="cropIcon">
+					    <canvas image-cropper width="600" height="400" id="canvas"
+					        image="cropper.sourceImage"
+					        cropped-image="icon"
+					        crop-width="120"
+					        crop-height="120"
+					        keep-aspect="true"
+					        touch-radius="30" 
+					        crop-area-bounds="bounds"></canvas>
+					    <input type="file" onchange="angular.element(this).scope().select()" id="icon" img-cropper-fileread image="cropper.sourceImage" hidden="true"/>
+					    <div class="close">
+					        <i class="material-icons" ng-click="cropIcon = false">close</i>
+					        <button type="button" class="save-img-user" ng-click="applyIcon()">Сохранить</button>
+					    </div>
 					</div>
 				</div>
+				<div class="personal-info">
+					<input type="text" class="user-name" placeholder="Введите имя" ng-model="user.name">
+					<div small-calendar time="user.birthday" options="options"></div>
+					<button class="save-info" ng-click="saveDate()" ng-show="checkField()">Сохранить</button>
+				</div>
+			</div>
+			<div class="user-sessions">
+					<div class="user-sessions__header">
+						<span>Ваши сессии</span>
+					</div>
+					<div class="user-sessions__item" ng-repeat="session in user.sessions track by $index">
+						<span class="sessions-text" ng-bind="getSessionsInfo(session)" ng-class="{current: checkCurrentSession(session)}"></span>
+						<div class="terminated-ses" ng-click="deleteSession($index, session)">
+							<img src="./images/terminate.png" alt="terminated">
+							<button class="delete-session">Terminated</button>
+						</div>
+					</div>
+			</div>
 		</div>
-	</div>
+	</section>
 </article>
