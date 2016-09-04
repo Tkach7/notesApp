@@ -21,7 +21,7 @@
 						<li class="weekday">ВС</li>
 					</ul>
 				</div>
-				<div class="month-panel">
+				<div class="month-panelr">
 					<ul class="month">
 						<li class="month-item" ng-repeat="day in month.days track by $index" ng-class="{mute: day.mute}" dnd-list="day.events" dnd-drop="movedDragElem(event, item)" dnd-allowed-types="day.mute">
 							<span class="day-num" ng-bind="day.value | date: 'dd'" ng-class="{notactive: day.mute 
