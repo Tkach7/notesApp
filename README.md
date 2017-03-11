@@ -2,7 +2,10 @@
 Simple app with Angular framework
 
 # Description
-Single page todo-list, which has a calendar, todo-lsit and profile-page.
+Single page todo-list, which has a 
+* calendar;
+* todo-list;
+* profile-page.
 
 # Details
 * Auth: Digest
